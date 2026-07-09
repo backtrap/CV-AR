@@ -17,7 +17,10 @@ from vision.detector import ObjectDetector
 from vision.segmentation.segmenter import ObjectSegmenter, SceneDepthAttacher
 from vision.depth.depth_estimator import DepthEstimator
 from vision.spatial.transformer import Spatial3DConverter
+from vision.spatial.stabilizer import CoordinateStabilizer
 from vision.reasoning.relation_graph import SpatialRelationGraph
+from vision.reasoning.affordance_engine import AffordanceEngine
+from vision.spatial.floor_detector import FloorPlaneDetector
 
 from llm.feature_extractor import build_inputs_from_scene, DEFAULT_CONTEXT
 from llm.interpreter import interpret_batch
@@ -28,7 +31,7 @@ MOCK_LLM = False
 
 # SAM은 계산 비용이 크므로 일정 주기 (5프레임)마다 새로 실행하고, 그 사이에는 이전 마스크를 재사용합니다.
 # 단, 객체의 위치가 크게 변한 경우에는 주기 전이라도 즉시 SAM을 다시 실행합니다.
-SAM_INTERVAL = 3
+SAM_INTERVAL = 6
 SAM_IOU_THRESHOLD = 0.7
 
 # 글로벌 변수
@@ -44,10 +47,13 @@ segmenter = None
 depth_estimator = None
 depth_attacher = None
 spatial_converter = None
+stabilizer = None
 relation_graph = None
+affordance_engine = None
+floor_detector = None
 
 def init_vision_modules():
-    global detector, segmenter, depth_estimator, depth_attacher, spatial_converter, relation_graph
+    global detector, segmenter, depth_estimator, depth_attacher, spatial_converter, stabilizer, relation_graph, affordance_engine, floor_detector
     detector = ObjectDetector()
     segmenter = ObjectSegmenter()
     depth_estimator = DepthEstimator()
@@ -55,8 +61,10 @@ def init_vision_modules():
     spatial_converter = Spatial3DConverter(
         camera_matrix=CAMERA_MATRIX
     )
-
+    stabilizer = CoordinateStabilizer()
     relation_graph = SpatialRelationGraph()
+    affordance_engine = AffordanceEngine()
+    floor_detector = FloorPlaneDetector()
 
     print("[서버] 비전 모듈 초기화 완료.")
 
@@ -148,7 +156,13 @@ def build_scene_graph_for_frame(
     # 새로 계산했거나 캐시에서 가져온 동일 시점의 SAM 마스크와 Depth map을 결합합니다.
     scene_data = depth_attacher.attach_depth(scene_data, masks_list, depth_map)
     scene_data = spatial_converter.process_scene_3d(scene_data)
+    # [Task4] 3D 변환 직후 좌표 안정화(1€ 필터)로 프레임 간 지터 제거
+    scene_data = stabilizer.process_scene(scene_data)
+    # <--- 추가: 3D 변환 직후에 바닥을 감지하여 델타값을 구합니다 --->
+    scene_data = floor_detector.update_scene_with_floor(scene_data, depth_map)
     scene_data = relation_graph.process_scene_relations(scene_data)
+    # <--- 추가: 관계 그래프 완성 직후 행동 추론 엔진을 통과시킵니다 --->
+    scene_data = affordance_engine.infer_affordances(scene_data)
     return scene_data
 
 def is_significant_change(prev_inputs, curr_inputs):
@@ -160,11 +174,13 @@ def is_significant_change(prev_inputs, curr_inputs):
     if len(prev_inputs) != len(curr_inputs):
         return True
     for p_obj, c_obj in zip(prev_inputs, curr_inputs):
-        if p_obj.detected_class != c_obj.detected_class:
-            return True
         if abs(p_obj.mask_area - c_obj.mask_area) / max(p_obj.mask_area, 1) > 0.5:
             return True
-        if abs(p_obj.target_z - c_obj.target_z) > 2.0:
+        previous_box = p_obj.bbox_2d or []
+        current_box = c_obj.bbox_2d or []
+        if bbox_iou(previous_box, current_box) < SAM_IOU_THRESHOLD:
+            return True
+        if abs(p_obj.target_z - c_obj.target_z) > 0.2:
             return True
     return False
 

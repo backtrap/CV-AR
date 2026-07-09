@@ -26,13 +26,6 @@ class AffordanceEngine:
             "umbrella": ["graspable", "openable"]
         }
 
-        self.semantic_prior_db = {
-            "cell phone": {"real_area": 12000.0, "aspect_ratio": 2.16}, # 일반적인 스마트폰 평균 스케일
-            "bottle": {"real_area": 15400.0, "aspect_ratio": 3.14},
-            "suitcase": {"real_area": 220000.0, "aspect_ratio": 1.37},
-            "chair": {"real_area": 250000.0, "aspect_ratio": 1.0}
-        }
-
         # 정적 속성 -> 실행 행동 매핑 사전
         self.property_to_action = {
             "graspable": "grasp",
@@ -103,34 +96,13 @@ class AffordanceEngine:
 
             object_state = "unknown"
             
-            # 클래스별 실제 크기 Prior 로드 및 Mask_norm 정규화 연산
-            if label in self.semantic_prior_db:
-                prior_area = self.semantic_prior_db[label]["real_area"]
-                mask_norm = (mask_area * (target_z ** 2)) /  prior_area
-                print(
-                    f"{label}: "
-                    f"mask={mask_area:.1f}, "
-                    f"z={target_z:.2f}, "
-                    f"prior={prior_area}, "
-                    f"mask_norm={mask_norm:.8f}"
-                )
-            else:
-                mask_norm = 1.0 # Prior 데이터가 없는 사물은 기본 가중치 유지
 
-            # 정규화된 척도(mask_norm)와 거리를 연동하여 거리 독립적인 상태 추론 수행
-            # TODO:
-            # 실제 로그를 수집하여 mask_norm 분포를 분석한 뒤
-            # held_in_hand / elevated 분류 임계값(threshold)을 결정한다.
-            if abs(floor_margin) <= 0.5:
-                object_state = "placed_on_floor"
-            elif floor_margin > 0.5:
-                # 5장 분석 결과 반영: 임계값이 거리(3m vs 4.86m)에 무너지지 않도록 mask_norm 조건 결합
-                if mask_norm < 0.8: 
-                    object_state = "elevated"        # 탁자나 선반 위 고정 상태
-                else:
-                    object_state = "held_in_hand"     # 손에 들려 원근왜곡이 상쇄된 동적 상태
-            elif floor_margin < -0.5:
-                object_state = "background_layer"
+            # 실험 데이터 기반 최적화: held_fm(최소 -0.015) vs elev_fm(최대 -0.039)
+            if floor_margin >= -0.02: 
+                object_state = "held_in_hand"     # 손에 들려 바닥 기준점보다 앞쪽으로 튀어나온 상태
+            else:
+                object_state = "elevated"         # 탁자나 선반 위 등 바닥 기준점 너머에 있는 상태
+
 
             obj["state"] = object_state
             # ---------------------------
@@ -144,7 +116,7 @@ class AffordanceEngine:
                     
                     # [피드백 1 반영] m 단사 주석 제거 및 보수적 pseudo-distance 임계값 기반 계층화 적용
                     if action_candidate in ["grasp", "drink", "read", "open", "carry"]:
-                        if is_near_agent and agent_distance <= 0.5: # pseudo-distance threshold
+                        if is_near_agent and agent_distance <= 0.7: # Validated PPS distance threshold
                             active_actions.append(action_candidate)
                             
                     elif action_candidate == "use":
@@ -152,7 +124,7 @@ class AffordanceEngine:
                             active_actions.append("use")
                             
                     elif action_candidate == "sit":
-                        if is_near_agent and agent_distance <= 1.2 and object_state == "placed_on_floor":
+                        if is_near_agent and agent_distance <= 1.2 and object_state == "elevated":
                             active_actions.append("sit")
                             
                     elif action_candidate == "move":
@@ -166,7 +138,7 @@ class AffordanceEngine:
             obj["affordance"]["actions"] = active_actions if active_actions else ["inspect"]
             
             # [피드백 1 반영] 의미론적 오류 전면 정정 (ground distance -> agent distance 및 m 표기 제거)
-            obj["description"] = f"Object is {object_state} with agent distance {agent_distance} (pseudo-unit)."
+            obj["description"] = f"Object is {object_state} with agent distance {agent_distance}."
 
         return scene_data
 

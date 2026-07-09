@@ -1,0 +1,3 @@
+method,mae,absrel,delta1,f1,false_trigger,kappa,flip
+Ours − geometry (static),nan,nan,nan,1.0,0.0,nan,0.0
+Ours (Depth+PPS),0.051295833333333346,0.17098611111111117,0.875,1.0,0.0,nan,0.0

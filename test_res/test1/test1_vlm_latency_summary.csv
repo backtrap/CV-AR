@@ -1,0 +1,3 @@
+source_file,n_samples,mean_seconds,sample_std_seconds,median_seconds,q1_seconds,q3_seconds,iqr_seconds,outlier_lower_bound_seconds,outlier_upper_bound_seconds,outlier_count,outlier_experiments,outlier_values_seconds
+test1_res.csv,31,8.471649,1.804663,7.872207,7.497289,9.050465,1.553176,5.167524,11.380230,2,exp=1/word=30; exp=2/word=29,12.409162; 14.269181
+test1_res_001.csv,31,5.998443,1.362757,5.599474,5.019490,6.610909,1.591420,2.632361,8.998039,1,exp=8/word=23,10.502048

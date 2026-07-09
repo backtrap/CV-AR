@@ -19,16 +19,39 @@ import time
 import cv2
 from PIL import Image
 
-from vision.stream import WebcamStream
+from vision.stream import WebcamStream, CAMERA_MATRIX
 from vision.detector import ObjectDetector
 from vision.segmentation.segmenter import ObjectSegmenter, SceneDepthAttacher
 from vision.depth.depth_estimator import DepthEstimator
 from vision.spatial.transformer import Spatial3DConverter
 from vision.reasoning.relation_graph import SpatialRelationGraph
+from vision.reasoning.affordance_engine import AffordanceEngine
+from vision.spatial.floor_detector import FloorPlaneDetector  # <--- 바닥 감지 모듈 추가!
+
 
 from llm.feature_extractor import build_inputs_from_scene, DEFAULT_CONTEXT
 from llm.interpreter import interpret_batch
 from llm.schemas import SemanticInterpretationBatchInput
+
+
+def bbox_iou(box_a, box_b) -> float:
+    if not box_a or not box_b or len(box_a) != 4 or len(box_b) != 4:
+        return 0.0
+
+    intersection_x1 = max(box_a[0], box_b[0])
+    intersection_y1 = max(box_a[1], box_b[1])
+    intersection_x2 = min(box_a[2], box_b[2])
+    intersection_y2 = min(box_a[3], box_b[3])
+
+    intersection_width = max(0.0, intersection_x2 - intersection_x1)
+    intersection_height = max(0.0, intersection_y2 - intersection_y1)
+    intersection_area = intersection_width * intersection_height
+
+    area_a = max(0.0, box_a[2] - box_a[0]) * max(0.0, box_a[3] - box_a[1])
+    area_b = max(0.0, box_b[2] - box_b[0]) * max(0.0, box_b[3] - box_b[1])
+    union_area = area_a + area_b - intersection_area
+
+    return intersection_area / union_area if union_area > 0.0 else 0.0
 
 
 def build_scene_graph_for_frame(frame, frame_count: int) -> dict:
@@ -50,21 +73,25 @@ def build_scene_graph_for_frame(frame, frame_count: int) -> dict:
     scene_data = depth_attacher.attach_depth(scene_data, masks_list, depth_map)
 
     scene_data = spatial_converter.process_scene_3d(scene_data)
+    scene_data = floor_detector.update_scene_with_floor(scene_data, depth_map)
     scene_data = relation_graph.process_scene_relations(scene_data)
-
+    scene_data = affordance_engine.infer_affordances(scene_data)
     return scene_data
 
 
 def main():
-    global detector, segmenter, depth_estimator, depth_attacher, spatial_converter, relation_graph
+    global detector, segmenter, depth_estimator, depth_attacher, spatial_converter, relation_graph, affordance_engine, floor_detector
 
     stream = WebcamStream()
     detector = ObjectDetector()
     segmenter = ObjectSegmenter()
     depth_estimator = DepthEstimator()
     depth_attacher = SceneDepthAttacher()
-    spatial_converter = Spatial3DConverter()
+    # [Task3 결함1 수정] 캘리브레이션된 내부 파라미터 주입 (기본값 fx=900 사용 방지)
+    spatial_converter = Spatial3DConverter(CAMERA_MATRIX)
     relation_graph = SpatialRelationGraph()
+    affordance_engine = AffordanceEngine()
+    floor_detector = FloorPlaneDetector()
 
     frame_count = 0
     last_sent_inputs = None
@@ -81,13 +108,14 @@ def main():
         if len(prev_inputs) != len(curr_inputs):
             return True
         for p_obj, c_obj in zip(prev_inputs, curr_inputs):
-            if p_obj.detected_class != c_obj.detected_class:
-                return True
             # 크기가 50% 이상 변했을 때만 감지 (손떨림 노이즈 무시)
             if abs(p_obj.mask_area - c_obj.mask_area) / max(p_obj.mask_area, 1) > 0.5:
                 return True
-            # 깊이(z) 값이 2.0 이상 크게 튀었을 때만 감지 (상대 깊이 노이즈 무시)
-            if abs(p_obj.target_z - c_obj.target_z) > 2.0:
+            # 객체 박스가 크게 이동했을 때만 감지
+            if bbox_iou(p_obj.bbox_2d or [], c_obj.bbox_2d or []) < 0.7:
+                return True
+            # 깊이(z) 값이 20cm 이상 크게 튀었을 때만 감지 (카메라 깊이 센서 노이즈 무시)
+            if abs(p_obj.target_z - c_obj.target_z) > 0.2:
                 return True
         return False
 
@@ -153,10 +181,9 @@ def main():
 
             for input_data, output_data in zip(inputs, batch_output.results):
                 print(
-                    f"  [Obj {input_data.object_id}] YOLO={input_data.detected_class:<10} (conf: {input_data.confidence:.2f}) -> VLM={output_data.identity.class_name:<12}\n"
+                    f"  [Obj {input_data.object_id}] VLM={output_data.identity.class_name:<12}\n"
                     f"      공간 관계: {output_data.corrected_spatial_relation.camera_relative} / {output_data.corrected_spatial_relation.environment_relative}\n"
                     f"      사물 상태: {output_data.semantic_state.social_state}\n"
-                    f"      판단 이유: {output_data.reasoning}\n"
                     f"      접근 가능: {output_data.planner_directives.is_safe_to_approach}\n"
                     f"      행동 정책: {output_data.planner_directives.action_policy} | 세부 액션: {output_data.semantic_state.affordances}\n"
                 )

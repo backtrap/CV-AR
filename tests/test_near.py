@@ -19,7 +19,7 @@ from PIL import Image
 CURRENT_PHASE_MODE = "PHASE_3_VERIFY"  
 
 # 데이터 기반 near 임계값 설정 슬롯 (PHASE_1_MEASURE 일때는 1.0 가드로 고정됨)
-CALIBRATED_NEAR_THRESHOLD = 3.0
+CALIBRATED_NEAR_THRESHOLD = 0.7
 
 # FLOOR_ROI_MODE 조절:
 # - "Bottom_ROI": 기존 화면 하단 25% 전체 (사용자 몸통 오염 가설 테스트)
@@ -333,7 +333,7 @@ def main():
     
     yolo_model = YOLO("yolov8n.pt")
     sam_model = SAM("sam_b.pt")
-    depth_pipe = pipeline(task="depth-estimation", model="depth-anything/Depth-Anything-V2-Base-hf", device=device)
+    depth_pipe = pipeline(task="depth-estimation", model="depth-anything/Depth-Anything-V2-Metric-Indoor-Base-hf", device=device)
     
     stream = UnifiedWebcamStream()
     floor_detector = ResearchFloorDetector(mode=CURRENT_FLOOR_MODE, percentile=CURRENT_FLOOR_PERCENTILE)

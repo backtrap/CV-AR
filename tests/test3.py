@@ -35,7 +35,7 @@ class FreshFrameResult:
     bboxes: list[list[float]]
     mask_count: int
     union_mask: np.ndarray
-    normalized_depth: np.ndarray
+    raw_depth: np.ndarray
     yolo_seconds: float
     sam_seconds: float
     depth_seconds: float
@@ -53,16 +53,21 @@ def bbox_iou(box_a: list[float], box_b: list[float]) -> float:
     return intersection / union if union > 0.0 else 0.0
 
 
-def cache_is_compatible(current: FreshFrameResult, cached: FreshFrameResult) -> bool:
-    """현재 WebSocket 서버와 동일한 라벨/개수/bbox 안정성 조건을 검사한다."""
+def cache_is_compatible(
+    current: FreshFrameResult,
+    previous: FreshFrameResult | None,
+    cached: FreshFrameResult,
+) -> bool:
+    """서버처럼 현재 객체와 직전 처리 프레임의 라벨/bbox를 비교한다."""
     return (
-        bool(cached.labels)
-        and cached.mask_count == len(cached.labels)
-        and current.labels == cached.labels
-        and len(current.bboxes) == len(cached.bboxes)
+        previous is not None
+        and bool(cached.labels)
+        and cached.mask_count == len(current.labels)
+        and current.labels == previous.labels
+        and len(current.bboxes) == len(previous.bboxes)
         and all(
-            bbox_iou(previous, latest) >= BBOX_IOU_THRESHOLD
-            for previous, latest in zip(cached.bboxes, current.bboxes)
+            bbox_iou(previous_bbox, current_bbox) >= BBOX_IOU_THRESHOLD
+            for previous_bbox, current_bbox in zip(previous.bboxes, current.bboxes)
         )
     )
 
@@ -111,6 +116,29 @@ def depth_difference_ratio(baseline: np.ndarray, candidate: np.ndarray) -> float
             interpolation=cv2.INTER_LINEAR,
         )
     return float(np.mean(np.abs(baseline - candidate)))
+
+
+def metric_depth_mae(baseline: np.ndarray, candidate: np.ndarray) -> float:
+    """Metric Depth map의 평균 절대오차를 미터 단위로 반환한다."""
+    if baseline.shape != candidate.shape:
+        candidate = cv2.resize(
+            candidate,
+            (baseline.shape[1], baseline.shape[0]),
+            interpolation=cv2.INTER_LINEAR,
+        )
+    finite = np.isfinite(baseline) & np.isfinite(candidate)
+    if not finite.any():
+        return 0.0
+    return float(np.mean(np.abs(baseline[finite] - candidate[finite])))
+
+
+def metric_depth_relative_error(baseline: np.ndarray, candidate: np.ndarray) -> float:
+    """Metric Depth MAE를 기준 프레임의 평균 깊이로 나눈 상대 오차를 반환한다."""
+    finite = np.isfinite(baseline)
+    denominator = float(np.mean(np.abs(baseline[finite]))) if finite.any() else 0.0
+    if denominator <= 1e-6:
+        return 0.0
+    return metric_depth_mae(baseline, candidate) / denominator
 
 
 def capture_frames() -> tuple[list[np.ndarray], list[float]]:
@@ -197,7 +225,7 @@ def compute_fresh_results(
                 bboxes=bboxes,
                 mask_count=len(masks),
                 union_mask=union_masks(masks, frame.shape),
-                normalized_depth=normalize_depth(depth_data["raw_depth"]),
+                raw_depth=np.asarray(depth_data["raw_depth"], dtype=np.float32),
                 yolo_seconds=yolo_seconds,
                 sam_seconds=sam_seconds,
                 depth_seconds=depth_seconds,
@@ -228,17 +256,29 @@ def evaluate_intervals(fresh_results: list[FreshFrameResult]) -> list[dict]:
     rows: list[dict] = []
     for interval in INTERVALS:
         cached: FreshFrameResult | None = None
-        for position, current in enumerate(fresh_results):
-            scheduled_refresh = position % interval == 0
-            compatible = cached is not None and cache_is_compatible(current, cached)
-            refresh = interval == 1 or scheduled_refresh or not compatible
-            refresh_reason = "interval" if scheduled_refresh or interval == 1 else "cache_invalid"
-            if refresh:
-                cached = current
+        previous: FreshFrameResult | None = None
+        for current in fresh_results:
+            # server의 sam_frame_count는 1부터 시작하며 N의 배수에서 갱신한다.
+            scheduled_refresh = current.frame_index % interval == 0
+            compatible = (
+                cached is not None
+                and cache_is_compatible(current, previous, cached)
+            )
+            refresh = cached is None or scheduled_refresh or not compatible
+            if cached is None:
+                refresh_reason = "initial"
+            elif scheduled_refresh:
+                refresh_reason = "interval"
+            elif not compatible:
+                refresh_reason = "cache_invalid"
             else:
                 refresh_reason = "cache"
+            if refresh:
+                cached = current
 
             assert cached is not None
+            current_normalized_depth = normalize_depth(current.raw_depth)
+            cached_normalized_depth = normalize_depth(cached.raw_depth)
             rows.append(
                 {
                     "interval": interval,
@@ -252,10 +292,18 @@ def evaluate_intervals(fresh_results: list[FreshFrameResult]) -> list[dict]:
                         current.union_mask, cached.union_mask
                     ),
                     "depth_difference_ratio": depth_difference_ratio(
-                        current.normalized_depth, cached.normalized_depth
+                        current_normalized_depth, cached_normalized_depth
+                    ),
+                    "metric_depth_mae_m": metric_depth_mae(
+                        current.raw_depth, cached.raw_depth
+                    ),
+                    "metric_depth_relative_error": metric_depth_relative_error(
+                        current.raw_depth, cached.raw_depth
                     ),
                 }
             )
+            # 서버도 캐시 재사용 여부와 무관하게 매 처리 프레임의 bbox/label을 저장한다.
+            previous = current
     return rows
 
 
@@ -272,6 +320,10 @@ def save_results(fresh_results: list[FreshFrameResult], rows: list[dict]) -> Non
         selected = [row for row in rows if row["interval"] == interval]
         sam_values = np.array([row["sam_difference_ratio"] for row in selected])
         depth_values = np.array([row["depth_difference_ratio"] for row in selected])
+        metric_mae_values = np.array([row["metric_depth_mae_m"] for row in selected])
+        metric_relative_values = np.array(
+            [row["metric_depth_relative_error"] for row in selected]
+        )
         cache_count = sum(bool(row["used_cache"]) for row in selected)
         summary_rows.append(
             {
@@ -283,6 +335,10 @@ def save_results(fresh_results: list[FreshFrameResult], rows: list[dict]) -> Non
                 "max_sam_difference_ratio": float(sam_values.max()),
                 "mean_depth_difference_ratio": float(depth_values.mean()),
                 "max_depth_difference_ratio": float(depth_values.max()),
+                "mean_metric_depth_mae_m": float(metric_mae_values.mean()),
+                "max_metric_depth_mae_m": float(metric_mae_values.max()),
+                "mean_metric_depth_relative_error": float(metric_relative_values.mean()),
+                "max_metric_depth_relative_error": float(metric_relative_values.max()),
             }
         )
 
@@ -305,7 +361,9 @@ def save_results(fresh_results: list[FreshFrameResult], rows: list[dict]) -> Non
                 f"sam_mean={summary['mean_sam_difference_ratio']:.6f} | "
                 f"sam_max={summary['max_sam_difference_ratio']:.6f} | "
                 f"depth_mean={summary['mean_depth_difference_ratio']:.6f} | "
-                f"depth_max={summary['max_depth_difference_ratio']:.6f}\n"
+                f"depth_max={summary['max_depth_difference_ratio']:.6f} | "
+                f"metric_mae_mean={summary['mean_metric_depth_mae_m']:.6f}m | "
+                f"metric_mae_max={summary['max_metric_depth_mae_m']:.6f}m\n"
             )
 
         file.write("\n[frame results]\n")
@@ -318,6 +376,8 @@ def save_results(fresh_results: list[FreshFrameResult], rows: list[dict]) -> Non
                 f"reason={row['refresh_reason']} | "
                 f"sam_diff={row['sam_difference_ratio']:.6f} | "
                 f"depth_diff={row['depth_difference_ratio']:.6f} | "
+                f"metric_depth_mae={row['metric_depth_mae_m']:.6f}m | "
+                f"metric_depth_relative={row['metric_depth_relative_error']:.6f} | "
                 f"labels={row['labels']}\n"
             )
 
@@ -330,6 +390,8 @@ def save_results(fresh_results: list[FreshFrameResult], rows: list[dict]) -> Non
         "bbox_iou_threshold": BBOX_IOU_THRESHOLD,
         "sam_metric": "1 - IoU of baseline and cached union masks",
         "depth_metric": "MAE of independently min-max-normalized baseline and cached depth maps",
+        "metric_depth_mae": "MAE in meters between baseline and cached Metric Depth maps",
+        "metric_depth_relative_error": "Metric Depth MAE divided by baseline mean absolute depth",
         "baseline_mean_yolo_seconds": float(
             np.mean([result.yolo_seconds for result in fresh_results])
         ),

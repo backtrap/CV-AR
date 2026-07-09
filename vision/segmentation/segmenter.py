@@ -7,10 +7,11 @@ import json
 import copy
 
 # 하위 패키지 모듈 참조 정합성 유지
-from vision.stream import WebcamStream
+from vision.stream import WebcamStream, CAMERA_MATRIX
 from vision.detector import ObjectDetector
-from vision.depth.depth_estimator import DepthEstimator
+from vision.depth.depth_estimator import DepthEstimator, robust_representative_depth
 from vision.spatial.transformer import Spatial3DConverter
+from vision.spatial.stabilizer import CoordinateStabilizer
 from vision.spatial.floor_detector import FloorPlaneDetector
 from vision.reasoning.relation_graph import SpatialRelationGraph   # ➔ 8단계 관계 그래프 엔진 수입
 from vision.reasoning.affordance_engine import AffordanceEngine # ➔ 8단계 어포던스 추론 엔진 수입
@@ -130,7 +131,7 @@ class SceneDepthAttacher:
             mask_pixels = obj["sam"]["mask_area"]
 
             if mask_pixels == 0:
-                obj["depth"] = {"mean_relative_depth": 0.0, "min_relative_depth": 0.0, "max_relative_depth": 0.0}
+                obj["depth"] = robust_representative_depth(None)
                 continue
 
             if raw_depth_map.shape != mask_bool.shape:
@@ -141,17 +142,8 @@ class SceneDepthAttacher:
                 ).astype(bool)
 
             roi_pixels = raw_depth_map[mask_bool]
-            if roi_pixels.size == 0:
-                obj["depth"] = {"mean_relative_depth": 0.0, "min_relative_depth": 0.0, "max_relative_depth": 0.0}
-                continue
-
-            roi_pixels_clipped = np.clip(roi_pixels, 0.0, None)
-
-            obj["depth"] = {
-                "mean_relative_depth": round(float(np.mean(roi_pixels_clipped)), 4),
-                "min_relative_depth": round(float(np.min(roi_pixels_clipped)), 4),
-                "max_relative_depth": round(float(np.max(roi_pixels_clipped)), 4)
-            }
+            # [Task2] 단순 평균 대신 IQR 이상치 제거 후 median (근거: robust_representative_depth 참조)
+            obj["depth"] = robust_representative_depth(roi_pixels)
 
         return scene_data
 
@@ -164,7 +156,10 @@ if __name__ == "__main__":
     segmenter = ObjectSegmenter()
     depth_engine = DepthEstimator()
     attacher = SceneDepthAttacher()
-    spatial_converter = Spatial3DConverter()
+    # [Task3 결함1 수정] 캘리브레이션된 내부 파라미터(CAMERA_MATRIX) 주입.
+    # 기본값(fx=900) 대신 stream.py의 실측 행렬(fx≈964.86)을 사용해 좌표 오차를 줄인다.
+    spatial_converter = Spatial3DConverter(CAMERA_MATRIX)
+    stabilizer = CoordinateStabilizer()  # [Task4] 프레임 간 좌표 안정화(1€ 필터)
     floor_detector = FloorPlaneDetector()
     relation_graph = SpatialRelationGraph() # ➔ 8단계-1 관계 생성기 장착
     affordance_engine = AffordanceEngine()   # ➔ 8단계-2 의미 추론기 장착
@@ -222,6 +217,9 @@ if __name__ == "__main__":
             scene_with_depth = attacher.attach_depth(mid_scene, last_masks_list, cached_depth_data)
             scene_with_3d = spatial_converter.process_scene_3d(scene_with_depth)
             last_labels_sequence = copy.deepcopy(current_labels)
+
+        # 2.5 [Task4] 좌표 안정화: 관계/어포던스 추론 전에 spatial_3d 지터 제거
+        scene_with_3d = stabilizer.process_scene(scene_with_3d)
 
         # 3. 7단계 가설면 매핑 레이어 주입
         scene_with_floor = floor_detector.update_scene_with_floor(scene_with_3d, cached_depth_data)

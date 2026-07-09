@@ -1,10 +1,10 @@
 import numpy as np
 
 class SpatialRelationGraph:
-    def __init__(self, near_threshold=1.0):
+    def __init__(self, near_threshold=0.7):
         """
         [8-1단계: 최종 방어형 관계 그래프 엔진]
-        - near_threshold를 보수적인 1.0(Pseudo)으로 고정하여 오탐지를 억제합니다.
+        - near_threshold를 실험으로 검증된 0.7(70cm, PPS)로 고정하여 동작합니다.
         - near 관계는 한 방향(i < j)으로만 정직하게 저장하므로, 하위 엔진 조회 시 반드시 양방향 조회가 필요합니다.
         """
         self.near_threshold = near_threshold

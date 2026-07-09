@@ -1,519 +1,519 @@
 test3: SAM/Depth cache interval experiment
-created_at: 2026-07-06T15:28:27+09:00
+created_at: 2026-07-09T23:08:25+09:00
 capture_seconds: 10.0
 sample_fps: 5.0
 frame_count: 50
 
 [interval summary]
-interval= 1 | cache_rate=0.000000 | sam_mean=0.000000 | sam_max=0.000000 | depth_mean=0.000000 | depth_max=0.000000
-interval= 2 | cache_rate=0.220000 | sam_mean=0.051747 | sam_max=0.998671 | depth_mean=0.006328 | depth_max=0.073068
-interval= 3 | cache_rate=0.280000 | sam_mean=0.038407 | sam_max=0.344875 | depth_mean=0.009709 | depth_max=0.079208
-interval= 4 | cache_rate=0.340000 | sam_mean=0.082140 | sam_max=0.998671 | depth_mean=0.012249 | depth_max=0.130254
-interval= 5 | cache_rate=0.380000 | sam_mean=0.087288 | sam_max=0.520212 | depth_mean=0.018882 | depth_max=0.142875
-interval= 6 | cache_rate=0.380000 | sam_mean=0.095473 | sam_max=0.998234 | depth_mean=0.016756 | depth_max=0.106518
-interval= 7 | cache_rate=0.400000 | sam_mean=0.085803 | sam_max=0.998234 | depth_mean=0.013700 | depth_max=0.106518
-interval= 8 | cache_rate=0.400000 | sam_mean=0.087220 | sam_max=0.998234 | depth_mean=0.013993 | depth_max=0.106518
-interval= 9 | cache_rate=0.420000 | sam_mean=0.078216 | sam_max=0.520212 | depth_mean=0.014212 | depth_max=0.106518
-interval=10 | cache_rate=0.420000 | sam_mean=0.098685 | sam_max=0.998234 | depth_mean=0.015673 | depth_max=0.106518
+interval= 1 | cache_rate=0.000000 | sam_mean=0.000000 | sam_max=0.000000 | depth_mean=0.000000 | depth_max=0.000000 | metric_mae_mean=0.000000m | metric_mae_max=0.000000m
+interval= 2 | cache_rate=0.160000 | sam_mean=0.007943 | sam_max=0.127409 | depth_mean=0.005667 | depth_max=0.057119 | metric_mae_mean=0.014139m | metric_mae_max=0.285710m
+interval= 3 | cache_rate=0.240000 | sam_mean=0.014725 | sam_max=0.180102 | depth_mean=0.011658 | depth_max=0.148454 | metric_mae_mean=0.032546m | metric_mae_max=0.396000m
+interval= 4 | cache_rate=0.260000 | sam_mean=0.022177 | sam_max=0.219258 | depth_mean=0.013768 | depth_max=0.173380 | metric_mae_mean=0.035885m | metric_mae_max=0.372903m
+interval= 5 | cache_rate=0.300000 | sam_mean=0.022863 | sam_max=0.156218 | depth_mean=0.014410 | depth_max=0.173380 | metric_mae_mean=0.044571m | metric_mae_max=0.372903m
+interval= 6 | cache_rate=0.320000 | sam_mean=0.024102 | sam_max=0.205180 | depth_mean=0.015382 | depth_max=0.169044 | metric_mae_mean=0.050179m | metric_mae_max=0.442000m
+interval= 7 | cache_rate=0.300000 | sam_mean=0.023167 | sam_max=0.246929 | depth_mean=0.014407 | depth_max=0.148454 | metric_mae_mean=0.046542m | metric_mae_max=0.442000m
+interval= 8 | cache_rate=0.340000 | sam_mean=0.031666 | sam_max=0.270748 | depth_mean=0.017572 | depth_max=0.169044 | metric_mae_mean=0.053609m | metric_mae_max=0.442000m
+interval= 9 | cache_rate=0.340000 | sam_mean=0.036868 | sam_max=0.273361 | depth_mean=0.018940 | depth_max=0.169044 | metric_mae_mean=0.058584m | metric_mae_max=0.442000m
+interval=10 | cache_rate=0.320000 | sam_mean=0.040021 | sam_max=0.273361 | depth_mean=0.018728 | depth_max=0.173380 | metric_mae_mean=0.060865m | metric_mae_max=0.442000m
 
 [frame results]
-interval= 1 | frame=  1 | time=0.597s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame=  2 | time=0.726s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame=  3 | time=0.741s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame=  4 | time=0.764s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame=  5 | time=0.806s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame=  6 | time=1.044s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame=  7 | time=1.200s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame=  8 | time=1.403s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame=  9 | time=1.603s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame= 10 | time=1.806s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame= 11 | time=2.013s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame= 12 | time=2.246s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame= 13 | time=2.402s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame= 14 | time=2.601s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person|tv
-interval= 1 | frame= 15 | time=2.805s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame= 16 | time=3.010s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=cup|person|person
-interval= 1 | frame= 17 | time=3.229s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|cup|cup
-interval= 1 | frame= 18 | time=3.431s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|hot dog
-interval= 1 | frame= 19 | time=3.601s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|hot dog
-interval= 1 | frame= 20 | time=3.803s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|apple
-interval= 1 | frame= 21 | time=4.040s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame= 22 | time=4.227s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame= 23 | time=4.431s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame= 24 | time=4.633s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame= 25 | time=4.840s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame= 26 | time=5.026s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 1 | frame= 27 | time=5.229s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 1 | frame= 28 | time=5.435s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame= 29 | time=5.623s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 1 | frame= 30 | time=5.826s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame= 31 | time=6.029s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame= 32 | time=6.217s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 1 | frame= 33 | time=6.421s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 1 | frame= 34 | time=6.628s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 1 | frame= 35 | time=6.829s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame= 36 | time=7.020s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|apple
-interval= 1 | frame= 37 | time=7.224s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|donut
-interval= 1 | frame= 38 | time=7.425s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 1 | frame= 39 | time=7.628s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame= 40 | time=7.818s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|tv
-interval= 1 | frame= 41 | time=8.023s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|tv
-interval= 1 | frame= 42 | time=8.226s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 1 | frame= 43 | time=8.413s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame= 44 | time=8.615s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame= 45 | time=8.821s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame= 46 | time=9.009s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame= 47 | time=9.212s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 1 | frame= 48 | time=9.418s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person|tv
-interval= 1 | frame= 49 | time=9.622s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 1 | frame= 50 | time=9.808s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 2 | frame=  1 | time=0.597s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 2 | frame=  2 | time=0.726s | used_cache=True | reason=cache | sam_diff=0.119327 | depth_diff=0.023172 | labels=person
-interval= 2 | frame=  3 | time=0.741s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 2 | frame=  4 | time=0.764s | used_cache=True | reason=cache | sam_diff=0.031443 | depth_diff=0.043050 | labels=person
-interval= 2 | frame=  5 | time=0.806s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 2 | frame=  6 | time=1.044s | used_cache=True | reason=cache | sam_diff=0.077321 | depth_diff=0.026089 | labels=person
-interval= 2 | frame=  7 | time=1.200s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 2 | frame=  8 | time=1.403s | used_cache=True | reason=cache | sam_diff=0.134279 | depth_diff=0.073068 | labels=person
-interval= 2 | frame=  9 | time=1.603s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 2 | frame= 10 | time=1.806s | used_cache=True | reason=cache | sam_diff=0.090496 | depth_diff=0.022786 | labels=person
-interval= 2 | frame= 11 | time=2.013s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 2 | frame= 12 | time=2.246s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 2 | frame= 13 | time=2.402s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 2 | frame= 14 | time=2.601s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person|tv
-interval= 2 | frame= 15 | time=2.805s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 2 | frame= 16 | time=3.010s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=cup|person|person
-interval= 2 | frame= 17 | time=3.229s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|cup|cup
-interval= 2 | frame= 18 | time=3.431s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|hot dog
-interval= 2 | frame= 19 | time=3.601s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|hot dog
-interval= 2 | frame= 20 | time=3.803s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|apple
-interval= 2 | frame= 21 | time=4.040s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 2 | frame= 22 | time=4.227s | used_cache=True | reason=cache | sam_diff=0.261620 | depth_diff=0.019509 | labels=person
-interval= 2 | frame= 23 | time=4.431s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 2 | frame= 24 | time=4.633s | used_cache=True | reason=cache | sam_diff=0.355062 | depth_diff=0.012669 | labels=person
-interval= 2 | frame= 25 | time=4.840s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 2 | frame= 26 | time=5.026s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 2 | frame= 27 | time=5.229s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 2 | frame= 28 | time=5.435s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 2 | frame= 29 | time=5.623s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 2 | frame= 30 | time=5.826s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 2 | frame= 31 | time=6.029s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 2 | frame= 32 | time=6.217s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 2 | frame= 33 | time=6.421s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 2 | frame= 34 | time=6.628s | used_cache=True | reason=cache | sam_diff=0.454003 | depth_diff=0.006067 | labels=person|remote
-interval= 2 | frame= 35 | time=6.829s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 2 | frame= 36 | time=7.020s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|apple
-interval= 2 | frame= 37 | time=7.224s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|donut
-interval= 2 | frame= 38 | time=7.425s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 2 | frame= 39 | time=7.628s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 2 | frame= 40 | time=7.818s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|tv
-interval= 2 | frame= 41 | time=8.023s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|tv
-interval= 2 | frame= 42 | time=8.226s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 2 | frame= 43 | time=8.413s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 2 | frame= 44 | time=8.615s | used_cache=True | reason=cache | sam_diff=0.018035 | depth_diff=0.010507 | labels=person
-interval= 2 | frame= 45 | time=8.821s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 2 | frame= 46 | time=9.009s | used_cache=True | reason=cache | sam_diff=0.998671 | depth_diff=0.052491 | labels=person
-interval= 2 | frame= 47 | time=9.212s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 2 | frame= 48 | time=9.418s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person|tv
-interval= 2 | frame= 49 | time=9.622s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 2 | frame= 50 | time=9.808s | used_cache=True | reason=cache | sam_diff=0.047086 | depth_diff=0.026982 | labels=person
-interval= 3 | frame=  1 | time=0.597s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 3 | frame=  2 | time=0.726s | used_cache=True | reason=cache | sam_diff=0.119327 | depth_diff=0.023172 | labels=person
-interval= 3 | frame=  3 | time=0.741s | used_cache=True | reason=cache | sam_diff=0.150751 | depth_diff=0.079208 | labels=person
-interval= 3 | frame=  4 | time=0.764s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 3 | frame=  5 | time=0.806s | used_cache=True | reason=cache | sam_diff=0.113119 | depth_diff=0.048597 | labels=person
-interval= 3 | frame=  6 | time=1.044s | used_cache=True | reason=cache | sam_diff=0.175250 | depth_diff=0.062260 | labels=person
-interval= 3 | frame=  7 | time=1.200s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 3 | frame=  8 | time=1.403s | used_cache=True | reason=cache | sam_diff=0.134279 | depth_diff=0.073068 | labels=person
-interval= 3 | frame=  9 | time=1.603s | used_cache=True | reason=cache | sam_diff=0.175873 | depth_diff=0.058118 | labels=person
-interval= 3 | frame= 10 | time=1.806s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 3 | frame= 11 | time=2.013s | used_cache=True | reason=cache | sam_diff=0.057054 | depth_diff=0.022428 | labels=person
-interval= 3 | frame= 12 | time=2.246s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 3 | frame= 13 | time=2.402s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 3 | frame= 14 | time=2.601s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person|tv
-interval= 3 | frame= 15 | time=2.805s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 3 | frame= 16 | time=3.010s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=cup|person|person
-interval= 3 | frame= 17 | time=3.229s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|cup|cup
-interval= 3 | frame= 18 | time=3.431s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|hot dog
-interval= 3 | frame= 19 | time=3.601s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|hot dog
-interval= 3 | frame= 20 | time=3.803s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|apple
-interval= 3 | frame= 21 | time=4.040s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 3 | frame= 22 | time=4.227s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 3 | frame= 23 | time=4.431s | used_cache=True | reason=cache | sam_diff=0.344875 | depth_diff=0.015964 | labels=person
-interval= 3 | frame= 24 | time=4.633s | used_cache=True | reason=cache | sam_diff=0.207375 | depth_diff=0.023104 | labels=person
-interval= 3 | frame= 25 | time=4.840s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 3 | frame= 26 | time=5.026s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 3 | frame= 27 | time=5.229s | used_cache=True | reason=cache | sam_diff=0.158131 | depth_diff=0.018464 | labels=person|remote
-interval= 3 | frame= 28 | time=5.435s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 3 | frame= 29 | time=5.623s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 3 | frame= 30 | time=5.826s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 3 | frame= 31 | time=6.029s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 3 | frame= 32 | time=6.217s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 3 | frame= 33 | time=6.421s | used_cache=True | reason=cache | sam_diff=0.167933 | depth_diff=0.013938 | labels=person|remote
-interval= 3 | frame= 34 | time=6.628s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 3 | frame= 35 | time=6.829s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 3 | frame= 36 | time=7.020s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|apple
-interval= 3 | frame= 37 | time=7.224s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|donut
-interval= 3 | frame= 38 | time=7.425s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 3 | frame= 39 | time=7.628s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 3 | frame= 40 | time=7.818s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|tv
-interval= 3 | frame= 41 | time=8.023s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|tv
-interval= 3 | frame= 42 | time=8.226s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 3 | frame= 43 | time=8.413s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 3 | frame= 44 | time=8.615s | used_cache=True | reason=cache | sam_diff=0.018035 | depth_diff=0.010507 | labels=person
-interval= 3 | frame= 45 | time=8.821s | used_cache=True | reason=cache | sam_diff=0.051270 | depth_diff=0.009656 | labels=person
-interval= 3 | frame= 46 | time=9.009s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 3 | frame= 47 | time=9.212s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 3 | frame= 48 | time=9.418s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person|tv
-interval= 3 | frame= 49 | time=9.622s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 3 | frame= 50 | time=9.808s | used_cache=True | reason=cache | sam_diff=0.047086 | depth_diff=0.026982 | labels=person
-interval= 4 | frame=  1 | time=0.597s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 4 | frame=  2 | time=0.726s | used_cache=True | reason=cache | sam_diff=0.119327 | depth_diff=0.023172 | labels=person
-interval= 4 | frame=  3 | time=0.741s | used_cache=True | reason=cache | sam_diff=0.150751 | depth_diff=0.079208 | labels=person
-interval= 4 | frame=  4 | time=0.764s | used_cache=True | reason=cache | sam_diff=0.177017 | depth_diff=0.045411 | labels=person
-interval= 4 | frame=  5 | time=0.806s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 4 | frame=  6 | time=1.044s | used_cache=True | reason=cache | sam_diff=0.077321 | depth_diff=0.026089 | labels=person
-interval= 4 | frame=  7 | time=1.200s | used_cache=True | reason=cache | sam_diff=0.228723 | depth_diff=0.066235 | labels=person
-interval= 4 | frame=  8 | time=1.403s | used_cache=True | reason=cache | sam_diff=0.292609 | depth_diff=0.130254 | labels=person
-interval= 4 | frame=  9 | time=1.603s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 4 | frame= 10 | time=1.806s | used_cache=True | reason=cache | sam_diff=0.090496 | depth_diff=0.022786 | labels=person
-interval= 4 | frame= 11 | time=2.013s | used_cache=True | reason=cache | sam_diff=0.095420 | depth_diff=0.019712 | labels=person
-interval= 4 | frame= 12 | time=2.246s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 4 | frame= 13 | time=2.402s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 4 | frame= 14 | time=2.601s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person|tv
-interval= 4 | frame= 15 | time=2.805s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 4 | frame= 16 | time=3.010s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=cup|person|person
-interval= 4 | frame= 17 | time=3.229s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|cup|cup
-interval= 4 | frame= 18 | time=3.431s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|hot dog
-interval= 4 | frame= 19 | time=3.601s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|hot dog
-interval= 4 | frame= 20 | time=3.803s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|apple
-interval= 4 | frame= 21 | time=4.040s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 4 | frame= 22 | time=4.227s | used_cache=True | reason=cache | sam_diff=0.261620 | depth_diff=0.019509 | labels=person
-interval= 4 | frame= 23 | time=4.431s | used_cache=True | reason=cache | sam_diff=0.520212 | depth_diff=0.025608 | labels=person
-interval= 4 | frame= 24 | time=4.633s | used_cache=True | reason=cache | sam_diff=0.304840 | depth_diff=0.028884 | labels=person
-interval= 4 | frame= 25 | time=4.840s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 4 | frame= 26 | time=5.026s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 4 | frame= 27 | time=5.229s | used_cache=True | reason=cache | sam_diff=0.158131 | depth_diff=0.018464 | labels=person|remote
-interval= 4 | frame= 28 | time=5.435s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 4 | frame= 29 | time=5.623s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 4 | frame= 30 | time=5.826s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 4 | frame= 31 | time=6.029s | used_cache=True | reason=cache | sam_diff=0.112742 | depth_diff=0.011066 | labels=person
-interval= 4 | frame= 32 | time=6.217s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 4 | frame= 33 | time=6.421s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 4 | frame= 34 | time=6.628s | used_cache=True | reason=cache | sam_diff=0.454003 | depth_diff=0.006067 | labels=person|remote
-interval= 4 | frame= 35 | time=6.829s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 4 | frame= 36 | time=7.020s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|apple
-interval= 4 | frame= 37 | time=7.224s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|donut
-interval= 4 | frame= 38 | time=7.425s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 4 | frame= 39 | time=7.628s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 4 | frame= 40 | time=7.818s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|tv
-interval= 4 | frame= 41 | time=8.023s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|tv
-interval= 4 | frame= 42 | time=8.226s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 4 | frame= 43 | time=8.413s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 4 | frame= 44 | time=8.615s | used_cache=True | reason=cache | sam_diff=0.018035 | depth_diff=0.010507 | labels=person
-interval= 4 | frame= 45 | time=8.821s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 4 | frame= 46 | time=9.009s | used_cache=True | reason=cache | sam_diff=0.998671 | depth_diff=0.052491 | labels=person
-interval= 4 | frame= 47 | time=9.212s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 4 | frame= 48 | time=9.418s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person|tv
-interval= 4 | frame= 49 | time=9.622s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 4 | frame= 50 | time=9.808s | used_cache=True | reason=cache | sam_diff=0.047086 | depth_diff=0.026982 | labels=person
-interval= 5 | frame=  1 | time=0.597s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 5 | frame=  2 | time=0.726s | used_cache=True | reason=cache | sam_diff=0.119327 | depth_diff=0.023172 | labels=person
-interval= 5 | frame=  3 | time=0.741s | used_cache=True | reason=cache | sam_diff=0.150751 | depth_diff=0.079208 | labels=person
-interval= 5 | frame=  4 | time=0.764s | used_cache=True | reason=cache | sam_diff=0.177017 | depth_diff=0.045411 | labels=person
-interval= 5 | frame=  5 | time=0.806s | used_cache=True | reason=cache | sam_diff=0.270106 | depth_diff=0.093078 | labels=person
-interval= 5 | frame=  6 | time=1.044s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 5 | frame=  7 | time=1.200s | used_cache=True | reason=cache | sam_diff=0.282765 | depth_diff=0.085317 | labels=person
-interval= 5 | frame=  8 | time=1.403s | used_cache=True | reason=cache | sam_diff=0.340755 | depth_diff=0.142875 | labels=person
-interval= 5 | frame=  9 | time=1.603s | used_cache=True | reason=cache | sam_diff=0.340369 | depth_diff=0.123662 | labels=person
-interval= 5 | frame= 10 | time=1.806s | used_cache=True | reason=cache | sam_diff=0.302112 | depth_diff=0.131279 | labels=person
-interval= 5 | frame= 11 | time=2.013s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 5 | frame= 12 | time=2.246s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 5 | frame= 13 | time=2.402s | used_cache=True | reason=cache | sam_diff=0.042566 | depth_diff=0.017972 | labels=person
-interval= 5 | frame= 14 | time=2.601s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person|tv
-interval= 5 | frame= 15 | time=2.805s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 5 | frame= 16 | time=3.010s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=cup|person|person
-interval= 5 | frame= 17 | time=3.229s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|cup|cup
-interval= 5 | frame= 18 | time=3.431s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|hot dog
-interval= 5 | frame= 19 | time=3.601s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|hot dog
-interval= 5 | frame= 20 | time=3.803s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|apple
-interval= 5 | frame= 21 | time=4.040s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 5 | frame= 22 | time=4.227s | used_cache=True | reason=cache | sam_diff=0.261620 | depth_diff=0.019509 | labels=person
-interval= 5 | frame= 23 | time=4.431s | used_cache=True | reason=cache | sam_diff=0.520212 | depth_diff=0.025608 | labels=person
-interval= 5 | frame= 24 | time=4.633s | used_cache=True | reason=cache | sam_diff=0.304840 | depth_diff=0.028884 | labels=person
-interval= 5 | frame= 25 | time=4.840s | used_cache=True | reason=cache | sam_diff=0.333698 | depth_diff=0.034314 | labels=person
-interval= 5 | frame= 26 | time=5.026s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 5 | frame= 27 | time=5.229s | used_cache=True | reason=cache | sam_diff=0.158131 | depth_diff=0.018464 | labels=person|remote
-interval= 5 | frame= 28 | time=5.435s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 5 | frame= 29 | time=5.623s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 5 | frame= 30 | time=5.826s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 5 | frame= 31 | time=6.029s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 5 | frame= 32 | time=6.217s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 5 | frame= 33 | time=6.421s | used_cache=True | reason=cache | sam_diff=0.167933 | depth_diff=0.013938 | labels=person|remote
-interval= 5 | frame= 34 | time=6.628s | used_cache=True | reason=cache | sam_diff=0.475804 | depth_diff=0.014286 | labels=person|remote
-interval= 5 | frame= 35 | time=6.829s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 5 | frame= 36 | time=7.020s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|apple
-interval= 5 | frame= 37 | time=7.224s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|donut
-interval= 5 | frame= 38 | time=7.425s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 5 | frame= 39 | time=7.628s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 5 | frame= 40 | time=7.818s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|tv
-interval= 5 | frame= 41 | time=8.023s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|tv
-interval= 5 | frame= 42 | time=8.226s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 5 | frame= 43 | time=8.413s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 5 | frame= 44 | time=8.615s | used_cache=True | reason=cache | sam_diff=0.018035 | depth_diff=0.010507 | labels=person
-interval= 5 | frame= 45 | time=8.821s | used_cache=True | reason=cache | sam_diff=0.051270 | depth_diff=0.009656 | labels=person
-interval= 5 | frame= 46 | time=9.009s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 5 | frame= 47 | time=9.212s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 5 | frame= 48 | time=9.418s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person|tv
-interval= 5 | frame= 49 | time=9.622s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 5 | frame= 50 | time=9.808s | used_cache=True | reason=cache | sam_diff=0.047086 | depth_diff=0.026982 | labels=person
-interval= 6 | frame=  1 | time=0.597s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 6 | frame=  2 | time=0.726s | used_cache=True | reason=cache | sam_diff=0.119327 | depth_diff=0.023172 | labels=person
-interval= 6 | frame=  3 | time=0.741s | used_cache=True | reason=cache | sam_diff=0.150751 | depth_diff=0.079208 | labels=person
-interval= 6 | frame=  4 | time=0.764s | used_cache=True | reason=cache | sam_diff=0.177017 | depth_diff=0.045411 | labels=person
-interval= 6 | frame=  5 | time=0.806s | used_cache=True | reason=cache | sam_diff=0.270106 | depth_diff=0.093078 | labels=person
-interval= 6 | frame=  6 | time=1.044s | used_cache=True | reason=cache | sam_diff=0.321249 | depth_diff=0.106518 | labels=person
-interval= 6 | frame=  7 | time=1.200s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 6 | frame=  8 | time=1.403s | used_cache=True | reason=cache | sam_diff=0.134279 | depth_diff=0.073068 | labels=person
-interval= 6 | frame=  9 | time=1.603s | used_cache=True | reason=cache | sam_diff=0.175873 | depth_diff=0.058118 | labels=person
-interval= 6 | frame= 10 | time=1.806s | used_cache=True | reason=cache | sam_diff=0.211797 | depth_diff=0.073810 | labels=person
-interval= 6 | frame= 11 | time=2.013s | used_cache=True | reason=cache | sam_diff=0.210079 | depth_diff=0.058966 | labels=person
-interval= 6 | frame= 12 | time=2.246s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 6 | frame= 13 | time=2.402s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 6 | frame= 14 | time=2.601s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person|tv
-interval= 6 | frame= 15 | time=2.805s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 6 | frame= 16 | time=3.010s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=cup|person|person
-interval= 6 | frame= 17 | time=3.229s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|cup|cup
-interval= 6 | frame= 18 | time=3.431s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|hot dog
-interval= 6 | frame= 19 | time=3.601s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|hot dog
-interval= 6 | frame= 20 | time=3.803s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|apple
-interval= 6 | frame= 21 | time=4.040s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 6 | frame= 22 | time=4.227s | used_cache=True | reason=cache | sam_diff=0.261620 | depth_diff=0.019509 | labels=person
-interval= 6 | frame= 23 | time=4.431s | used_cache=True | reason=cache | sam_diff=0.520212 | depth_diff=0.025608 | labels=person
-interval= 6 | frame= 24 | time=4.633s | used_cache=True | reason=cache | sam_diff=0.304840 | depth_diff=0.028884 | labels=person
-interval= 6 | frame= 25 | time=4.840s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 6 | frame= 26 | time=5.026s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 6 | frame= 27 | time=5.229s | used_cache=True | reason=cache | sam_diff=0.158131 | depth_diff=0.018464 | labels=person|remote
-interval= 6 | frame= 28 | time=5.435s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 6 | frame= 29 | time=5.623s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 6 | frame= 30 | time=5.826s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 6 | frame= 31 | time=6.029s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 6 | frame= 32 | time=6.217s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 6 | frame= 33 | time=6.421s | used_cache=True | reason=cache | sam_diff=0.167933 | depth_diff=0.013938 | labels=person|remote
-interval= 6 | frame= 34 | time=6.628s | used_cache=True | reason=cache | sam_diff=0.475804 | depth_diff=0.014286 | labels=person|remote
-interval= 6 | frame= 35 | time=6.829s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 6 | frame= 36 | time=7.020s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|apple
-interval= 6 | frame= 37 | time=7.224s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|donut
-interval= 6 | frame= 38 | time=7.425s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 6 | frame= 39 | time=7.628s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 6 | frame= 40 | time=7.818s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|tv
-interval= 6 | frame= 41 | time=8.023s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|tv
-interval= 6 | frame= 42 | time=8.226s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 6 | frame= 43 | time=8.413s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 6 | frame= 44 | time=8.615s | used_cache=True | reason=cache | sam_diff=0.018035 | depth_diff=0.010507 | labels=person
-interval= 6 | frame= 45 | time=8.821s | used_cache=True | reason=cache | sam_diff=0.051270 | depth_diff=0.009656 | labels=person
-interval= 6 | frame= 46 | time=9.009s | used_cache=True | reason=cache | sam_diff=0.998234 | depth_diff=0.058614 | labels=person
-interval= 6 | frame= 47 | time=9.212s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 6 | frame= 48 | time=9.418s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person|tv
-interval= 6 | frame= 49 | time=9.622s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 6 | frame= 50 | time=9.808s | used_cache=True | reason=cache | sam_diff=0.047086 | depth_diff=0.026982 | labels=person
-interval= 7 | frame=  1 | time=0.597s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 7 | frame=  2 | time=0.726s | used_cache=True | reason=cache | sam_diff=0.119327 | depth_diff=0.023172 | labels=person
-interval= 7 | frame=  3 | time=0.741s | used_cache=True | reason=cache | sam_diff=0.150751 | depth_diff=0.079208 | labels=person
-interval= 7 | frame=  4 | time=0.764s | used_cache=True | reason=cache | sam_diff=0.177017 | depth_diff=0.045411 | labels=person
-interval= 7 | frame=  5 | time=0.806s | used_cache=True | reason=cache | sam_diff=0.270106 | depth_diff=0.093078 | labels=person
-interval= 7 | frame=  6 | time=1.044s | used_cache=True | reason=cache | sam_diff=0.321249 | depth_diff=0.106518 | labels=person
-interval= 7 | frame=  7 | time=1.200s | used_cache=True | reason=cache | sam_diff=0.065034 | depth_diff=0.031491 | labels=person
-interval= 7 | frame=  8 | time=1.403s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 7 | frame=  9 | time=1.603s | used_cache=True | reason=cache | sam_diff=0.077889 | depth_diff=0.028526 | labels=person
-interval= 7 | frame= 10 | time=1.806s | used_cache=True | reason=cache | sam_diff=0.124733 | depth_diff=0.024808 | labels=person
-interval= 7 | frame= 11 | time=2.013s | used_cache=True | reason=cache | sam_diff=0.108246 | depth_diff=0.032947 | labels=person
-interval= 7 | frame= 12 | time=2.246s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 7 | frame= 13 | time=2.402s | used_cache=True | reason=cache | sam_diff=0.042566 | depth_diff=0.017972 | labels=person
-interval= 7 | frame= 14 | time=2.601s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person|tv
-interval= 7 | frame= 15 | time=2.805s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 7 | frame= 16 | time=3.010s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=cup|person|person
-interval= 7 | frame= 17 | time=3.229s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|cup|cup
-interval= 7 | frame= 18 | time=3.431s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|hot dog
-interval= 7 | frame= 19 | time=3.601s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|hot dog
-interval= 7 | frame= 20 | time=3.803s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|apple
-interval= 7 | frame= 21 | time=4.040s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 7 | frame= 22 | time=4.227s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 7 | frame= 23 | time=4.431s | used_cache=True | reason=cache | sam_diff=0.344875 | depth_diff=0.015964 | labels=person
-interval= 7 | frame= 24 | time=4.633s | used_cache=True | reason=cache | sam_diff=0.207375 | depth_diff=0.023104 | labels=person
-interval= 7 | frame= 25 | time=4.840s | used_cache=True | reason=cache | sam_diff=0.298825 | depth_diff=0.026285 | labels=person
-interval= 7 | frame= 26 | time=5.026s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 7 | frame= 27 | time=5.229s | used_cache=True | reason=cache | sam_diff=0.158131 | depth_diff=0.018464 | labels=person|remote
-interval= 7 | frame= 28 | time=5.435s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 7 | frame= 29 | time=5.623s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 7 | frame= 30 | time=5.826s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 7 | frame= 31 | time=6.029s | used_cache=True | reason=cache | sam_diff=0.112742 | depth_diff=0.011066 | labels=person
-interval= 7 | frame= 32 | time=6.217s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 7 | frame= 33 | time=6.421s | used_cache=True | reason=cache | sam_diff=0.167933 | depth_diff=0.013938 | labels=person|remote
-interval= 7 | frame= 34 | time=6.628s | used_cache=True | reason=cache | sam_diff=0.475804 | depth_diff=0.014286 | labels=person|remote
-interval= 7 | frame= 35 | time=6.829s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 7 | frame= 36 | time=7.020s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|apple
-interval= 7 | frame= 37 | time=7.224s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|donut
-interval= 7 | frame= 38 | time=7.425s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 7 | frame= 39 | time=7.628s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 7 | frame= 40 | time=7.818s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|tv
-interval= 7 | frame= 41 | time=8.023s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|tv
-interval= 7 | frame= 42 | time=8.226s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 7 | frame= 43 | time=8.413s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 7 | frame= 44 | time=8.615s | used_cache=True | reason=cache | sam_diff=0.018035 | depth_diff=0.010507 | labels=person
-interval= 7 | frame= 45 | time=8.821s | used_cache=True | reason=cache | sam_diff=0.051270 | depth_diff=0.009656 | labels=person
-interval= 7 | frame= 46 | time=9.009s | used_cache=True | reason=cache | sam_diff=0.998234 | depth_diff=0.058614 | labels=person
-interval= 7 | frame= 47 | time=9.212s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 7 | frame= 48 | time=9.418s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person|tv
-interval= 7 | frame= 49 | time=9.622s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 7 | frame= 50 | time=9.808s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 8 | frame=  1 | time=0.597s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 8 | frame=  2 | time=0.726s | used_cache=True | reason=cache | sam_diff=0.119327 | depth_diff=0.023172 | labels=person
-interval= 8 | frame=  3 | time=0.741s | used_cache=True | reason=cache | sam_diff=0.150751 | depth_diff=0.079208 | labels=person
-interval= 8 | frame=  4 | time=0.764s | used_cache=True | reason=cache | sam_diff=0.177017 | depth_diff=0.045411 | labels=person
-interval= 8 | frame=  5 | time=0.806s | used_cache=True | reason=cache | sam_diff=0.270106 | depth_diff=0.093078 | labels=person
-interval= 8 | frame=  6 | time=1.044s | used_cache=True | reason=cache | sam_diff=0.321249 | depth_diff=0.106518 | labels=person
-interval= 8 | frame=  7 | time=1.200s | used_cache=True | reason=cache | sam_diff=0.065034 | depth_diff=0.031491 | labels=person
-interval= 8 | frame=  8 | time=1.403s | used_cache=True | reason=cache | sam_diff=0.102860 | depth_diff=0.044954 | labels=person
-interval= 8 | frame=  9 | time=1.603s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 8 | frame= 10 | time=1.806s | used_cache=True | reason=cache | sam_diff=0.090496 | depth_diff=0.022786 | labels=person
-interval= 8 | frame= 11 | time=2.013s | used_cache=True | reason=cache | sam_diff=0.095420 | depth_diff=0.019712 | labels=person
-interval= 8 | frame= 12 | time=2.246s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 8 | frame= 13 | time=2.402s | used_cache=True | reason=cache | sam_diff=0.042566 | depth_diff=0.017972 | labels=person
-interval= 8 | frame= 14 | time=2.601s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person|tv
-interval= 8 | frame= 15 | time=2.805s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 8 | frame= 16 | time=3.010s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=cup|person|person
-interval= 8 | frame= 17 | time=3.229s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|cup|cup
-interval= 8 | frame= 18 | time=3.431s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|hot dog
-interval= 8 | frame= 19 | time=3.601s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|hot dog
-interval= 8 | frame= 20 | time=3.803s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|apple
-interval= 8 | frame= 21 | time=4.040s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 8 | frame= 22 | time=4.227s | used_cache=True | reason=cache | sam_diff=0.261620 | depth_diff=0.019509 | labels=person
-interval= 8 | frame= 23 | time=4.431s | used_cache=True | reason=cache | sam_diff=0.520212 | depth_diff=0.025608 | labels=person
-interval= 8 | frame= 24 | time=4.633s | used_cache=True | reason=cache | sam_diff=0.304840 | depth_diff=0.028884 | labels=person
-interval= 8 | frame= 25 | time=4.840s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 8 | frame= 26 | time=5.026s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 8 | frame= 27 | time=5.229s | used_cache=True | reason=cache | sam_diff=0.158131 | depth_diff=0.018464 | labels=person|remote
-interval= 8 | frame= 28 | time=5.435s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 8 | frame= 29 | time=5.623s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 8 | frame= 30 | time=5.826s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 8 | frame= 31 | time=6.029s | used_cache=True | reason=cache | sam_diff=0.112742 | depth_diff=0.011066 | labels=person
-interval= 8 | frame= 32 | time=6.217s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 8 | frame= 33 | time=6.421s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 8 | frame= 34 | time=6.628s | used_cache=True | reason=cache | sam_diff=0.454003 | depth_diff=0.006067 | labels=person|remote
-interval= 8 | frame= 35 | time=6.829s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 8 | frame= 36 | time=7.020s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|apple
-interval= 8 | frame= 37 | time=7.224s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|donut
-interval= 8 | frame= 38 | time=7.425s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 8 | frame= 39 | time=7.628s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 8 | frame= 40 | time=7.818s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|tv
-interval= 8 | frame= 41 | time=8.023s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|tv
-interval= 8 | frame= 42 | time=8.226s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 8 | frame= 43 | time=8.413s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 8 | frame= 44 | time=8.615s | used_cache=True | reason=cache | sam_diff=0.018035 | depth_diff=0.010507 | labels=person
-interval= 8 | frame= 45 | time=8.821s | used_cache=True | reason=cache | sam_diff=0.051270 | depth_diff=0.009656 | labels=person
-interval= 8 | frame= 46 | time=9.009s | used_cache=True | reason=cache | sam_diff=0.998234 | depth_diff=0.058614 | labels=person
-interval= 8 | frame= 47 | time=9.212s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 8 | frame= 48 | time=9.418s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person|tv
-interval= 8 | frame= 49 | time=9.622s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 8 | frame= 50 | time=9.808s | used_cache=True | reason=cache | sam_diff=0.047086 | depth_diff=0.026982 | labels=person
-interval= 9 | frame=  1 | time=0.597s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 9 | frame=  2 | time=0.726s | used_cache=True | reason=cache | sam_diff=0.119327 | depth_diff=0.023172 | labels=person
-interval= 9 | frame=  3 | time=0.741s | used_cache=True | reason=cache | sam_diff=0.150751 | depth_diff=0.079208 | labels=person
-interval= 9 | frame=  4 | time=0.764s | used_cache=True | reason=cache | sam_diff=0.177017 | depth_diff=0.045411 | labels=person
-interval= 9 | frame=  5 | time=0.806s | used_cache=True | reason=cache | sam_diff=0.270106 | depth_diff=0.093078 | labels=person
-interval= 9 | frame=  6 | time=1.044s | used_cache=True | reason=cache | sam_diff=0.321249 | depth_diff=0.106518 | labels=person
-interval= 9 | frame=  7 | time=1.200s | used_cache=True | reason=cache | sam_diff=0.065034 | depth_diff=0.031491 | labels=person
-interval= 9 | frame=  8 | time=1.403s | used_cache=True | reason=cache | sam_diff=0.102860 | depth_diff=0.044954 | labels=person
-interval= 9 | frame=  9 | time=1.603s | used_cache=True | reason=cache | sam_diff=0.153446 | depth_diff=0.033141 | labels=person
-interval= 9 | frame= 10 | time=1.806s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 9 | frame= 11 | time=2.013s | used_cache=True | reason=cache | sam_diff=0.057054 | depth_diff=0.022428 | labels=person
-interval= 9 | frame= 12 | time=2.246s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 9 | frame= 13 | time=2.402s | used_cache=True | reason=cache | sam_diff=0.042566 | depth_diff=0.017972 | labels=person
-interval= 9 | frame= 14 | time=2.601s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person|tv
-interval= 9 | frame= 15 | time=2.805s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 9 | frame= 16 | time=3.010s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=cup|person|person
-interval= 9 | frame= 17 | time=3.229s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|cup|cup
-interval= 9 | frame= 18 | time=3.431s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|hot dog
-interval= 9 | frame= 19 | time=3.601s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|hot dog
-interval= 9 | frame= 20 | time=3.803s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|apple
-interval= 9 | frame= 21 | time=4.040s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 9 | frame= 22 | time=4.227s | used_cache=True | reason=cache | sam_diff=0.261620 | depth_diff=0.019509 | labels=person
-interval= 9 | frame= 23 | time=4.431s | used_cache=True | reason=cache | sam_diff=0.520212 | depth_diff=0.025608 | labels=person
-interval= 9 | frame= 24 | time=4.633s | used_cache=True | reason=cache | sam_diff=0.304840 | depth_diff=0.028884 | labels=person
-interval= 9 | frame= 25 | time=4.840s | used_cache=True | reason=cache | sam_diff=0.333698 | depth_diff=0.034314 | labels=person
-interval= 9 | frame= 26 | time=5.026s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 9 | frame= 27 | time=5.229s | used_cache=True | reason=cache | sam_diff=0.158131 | depth_diff=0.018464 | labels=person|remote
-interval= 9 | frame= 28 | time=5.435s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 9 | frame= 29 | time=5.623s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 9 | frame= 30 | time=5.826s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 9 | frame= 31 | time=6.029s | used_cache=True | reason=cache | sam_diff=0.112742 | depth_diff=0.011066 | labels=person
-interval= 9 | frame= 32 | time=6.217s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 9 | frame= 33 | time=6.421s | used_cache=True | reason=cache | sam_diff=0.167933 | depth_diff=0.013938 | labels=person|remote
-interval= 9 | frame= 34 | time=6.628s | used_cache=True | reason=cache | sam_diff=0.475804 | depth_diff=0.014286 | labels=person|remote
-interval= 9 | frame= 35 | time=6.829s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 9 | frame= 36 | time=7.020s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|apple
-interval= 9 | frame= 37 | time=7.224s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|donut
-interval= 9 | frame= 38 | time=7.425s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 9 | frame= 39 | time=7.628s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 9 | frame= 40 | time=7.818s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|tv
-interval= 9 | frame= 41 | time=8.023s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|tv
-interval= 9 | frame= 42 | time=8.226s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval= 9 | frame= 43 | time=8.413s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 9 | frame= 44 | time=8.615s | used_cache=True | reason=cache | sam_diff=0.018035 | depth_diff=0.010507 | labels=person
-interval= 9 | frame= 45 | time=8.821s | used_cache=True | reason=cache | sam_diff=0.051270 | depth_diff=0.009656 | labels=person
-interval= 9 | frame= 46 | time=9.009s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 9 | frame= 47 | time=9.212s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval= 9 | frame= 48 | time=9.418s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person|tv
-interval= 9 | frame= 49 | time=9.622s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval= 9 | frame= 50 | time=9.808s | used_cache=True | reason=cache | sam_diff=0.047086 | depth_diff=0.026982 | labels=person
-interval=10 | frame=  1 | time=0.597s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval=10 | frame=  2 | time=0.726s | used_cache=True | reason=cache | sam_diff=0.119327 | depth_diff=0.023172 | labels=person
-interval=10 | frame=  3 | time=0.741s | used_cache=True | reason=cache | sam_diff=0.150751 | depth_diff=0.079208 | labels=person
-interval=10 | frame=  4 | time=0.764s | used_cache=True | reason=cache | sam_diff=0.177017 | depth_diff=0.045411 | labels=person
-interval=10 | frame=  5 | time=0.806s | used_cache=True | reason=cache | sam_diff=0.270106 | depth_diff=0.093078 | labels=person
-interval=10 | frame=  6 | time=1.044s | used_cache=True | reason=cache | sam_diff=0.321249 | depth_diff=0.106518 | labels=person
-interval=10 | frame=  7 | time=1.200s | used_cache=True | reason=cache | sam_diff=0.065034 | depth_diff=0.031491 | labels=person
-interval=10 | frame=  8 | time=1.403s | used_cache=True | reason=cache | sam_diff=0.102860 | depth_diff=0.044954 | labels=person
-interval=10 | frame=  9 | time=1.603s | used_cache=True | reason=cache | sam_diff=0.153446 | depth_diff=0.033141 | labels=person
-interval=10 | frame= 10 | time=1.806s | used_cache=True | reason=cache | sam_diff=0.195020 | depth_diff=0.047930 | labels=person
-interval=10 | frame= 11 | time=2.013s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval=10 | frame= 12 | time=2.246s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval=10 | frame= 13 | time=2.402s | used_cache=True | reason=cache | sam_diff=0.042566 | depth_diff=0.017972 | labels=person
-interval=10 | frame= 14 | time=2.601s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person|tv
-interval=10 | frame= 15 | time=2.805s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval=10 | frame= 16 | time=3.010s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=cup|person|person
-interval=10 | frame= 17 | time=3.229s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|cup|cup
-interval=10 | frame= 18 | time=3.431s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|hot dog
-interval=10 | frame= 19 | time=3.601s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|hot dog
-interval=10 | frame= 20 | time=3.803s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|apple
-interval=10 | frame= 21 | time=4.040s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval=10 | frame= 22 | time=4.227s | used_cache=True | reason=cache | sam_diff=0.261620 | depth_diff=0.019509 | labels=person
-interval=10 | frame= 23 | time=4.431s | used_cache=True | reason=cache | sam_diff=0.520212 | depth_diff=0.025608 | labels=person
-interval=10 | frame= 24 | time=4.633s | used_cache=True | reason=cache | sam_diff=0.304840 | depth_diff=0.028884 | labels=person
-interval=10 | frame= 25 | time=4.840s | used_cache=True | reason=cache | sam_diff=0.333698 | depth_diff=0.034314 | labels=person
-interval=10 | frame= 26 | time=5.026s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval=10 | frame= 27 | time=5.229s | used_cache=True | reason=cache | sam_diff=0.158131 | depth_diff=0.018464 | labels=person|remote
-interval=10 | frame= 28 | time=5.435s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval=10 | frame= 29 | time=5.623s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval=10 | frame= 30 | time=5.826s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval=10 | frame= 31 | time=6.029s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval=10 | frame= 32 | time=6.217s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval=10 | frame= 33 | time=6.421s | used_cache=True | reason=cache | sam_diff=0.167933 | depth_diff=0.013938 | labels=person|remote
-interval=10 | frame= 34 | time=6.628s | used_cache=True | reason=cache | sam_diff=0.475804 | depth_diff=0.014286 | labels=person|remote
-interval=10 | frame= 35 | time=6.829s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval=10 | frame= 36 | time=7.020s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|apple
-interval=10 | frame= 37 | time=7.224s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|donut
-interval=10 | frame= 38 | time=7.425s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval=10 | frame= 39 | time=7.628s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval=10 | frame= 40 | time=7.818s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|tv
-interval=10 | frame= 41 | time=8.023s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|tv
-interval=10 | frame= 42 | time=8.226s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person
-interval=10 | frame= 43 | time=8.413s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval=10 | frame= 44 | time=8.615s | used_cache=True | reason=cache | sam_diff=0.018035 | depth_diff=0.010507 | labels=person
-interval=10 | frame= 45 | time=8.821s | used_cache=True | reason=cache | sam_diff=0.051270 | depth_diff=0.009656 | labels=person
-interval=10 | frame= 46 | time=9.009s | used_cache=True | reason=cache | sam_diff=0.998234 | depth_diff=0.058614 | labels=person
-interval=10 | frame= 47 | time=9.212s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|remote
-interval=10 | frame= 48 | time=9.418s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person|person|tv
-interval=10 | frame= 49 | time=9.622s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | labels=person
-interval=10 | frame= 50 | time=9.808s | used_cache=True | reason=cache | sam_diff=0.047086 | depth_diff=0.026982 | labels=person
+interval= 1 | frame=  1 | time=0.423s | used_cache=False | reason=initial | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 1 | frame=  2 | time=0.498s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 1 | frame=  3 | time=0.516s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 1 | frame=  4 | time=0.624s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 1 | frame=  5 | time=0.825s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 1 | frame=  6 | time=1.001s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 1 | frame=  7 | time=1.231s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 1 | frame=  8 | time=1.413s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 1 | frame=  9 | time=1.611s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 1 | frame= 10 | time=1.810s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 1 | frame= 11 | time=2.011s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 1 | frame= 12 | time=2.203s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 1 | frame= 13 | time=2.410s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 1 | frame= 14 | time=2.618s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 1 | frame= 15 | time=2.815s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 1 | frame= 16 | time=3.019s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 1 | frame= 17 | time=3.206s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 1 | frame= 18 | time=3.417s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 1 | frame= 19 | time=3.621s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 1 | frame= 20 | time=3.806s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 1 | frame= 21 | time=4.008s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 1 | frame= 22 | time=4.213s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 1 | frame= 23 | time=4.403s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle|bottle
+interval= 1 | frame= 24 | time=4.601s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 1 | frame= 25 | time=4.807s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 1 | frame= 26 | time=5.001s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed|bottle
+interval= 1 | frame= 27 | time=5.201s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|person
+interval= 1 | frame= 28 | time=5.406s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 1 | frame= 29 | time=5.608s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=bottle|person
+interval= 1 | frame= 30 | time=5.803s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 1 | frame= 31 | time=6.029s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle
+interval= 1 | frame= 32 | time=6.202s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle|bed
+interval= 1 | frame= 33 | time=6.405s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 1 | frame= 34 | time=6.608s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed|bottle
+interval= 1 | frame= 35 | time=6.809s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 1 | frame= 36 | time=7.044s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 1 | frame= 37 | time=7.201s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 1 | frame= 38 | time=7.406s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 1 | frame= 39 | time=7.639s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 1 | frame= 40 | time=7.807s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 1 | frame= 41 | time=8.020s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 1 | frame= 42 | time=8.225s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|cell phone
+interval= 1 | frame= 43 | time=8.427s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 1 | frame= 44 | time=8.617s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 1 | frame= 45 | time=8.833s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|cell phone
+interval= 1 | frame= 46 | time=9.045s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 1 | frame= 47 | time=9.222s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 1 | frame= 48 | time=9.427s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 1 | frame= 49 | time=9.629s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 1 | frame= 50 | time=9.815s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 2 | frame=  1 | time=0.423s | used_cache=False | reason=initial | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 2 | frame=  2 | time=0.498s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 2 | frame=  3 | time=0.516s | used_cache=True | reason=cache | sam_diff=0.053085 | depth_diff=0.037612 | metric_depth_mae=0.078762m | metric_depth_relative=0.028814 | labels=person
+interval= 2 | frame=  4 | time=0.624s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 2 | frame=  5 | time=0.825s | used_cache=True | reason=cache | sam_diff=0.127409 | depth_diff=0.057119 | metric_depth_mae=0.285710m | metric_depth_relative=0.093936 | labels=person
+interval= 2 | frame=  6 | time=1.001s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 2 | frame=  7 | time=1.231s | used_cache=True | reason=cache | sam_diff=0.039289 | depth_diff=0.039288 | metric_depth_mae=0.104416m | metric_depth_relative=0.035785 | labels=person
+interval= 2 | frame=  8 | time=1.413s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 2 | frame=  9 | time=1.611s | used_cache=True | reason=cache | sam_diff=0.007439 | depth_diff=0.006761 | metric_depth_mae=0.037434m | metric_depth_relative=0.013096 | labels=person
+interval= 2 | frame= 10 | time=1.810s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 2 | frame= 11 | time=2.011s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 2 | frame= 12 | time=2.203s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 2 | frame= 13 | time=2.410s | used_cache=True | reason=cache | sam_diff=0.028977 | depth_diff=0.020365 | metric_depth_mae=0.038136m | metric_depth_relative=0.013483 | labels=person|bottle
+interval= 2 | frame= 14 | time=2.618s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 2 | frame= 15 | time=2.815s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 2 | frame= 16 | time=3.019s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 2 | frame= 17 | time=3.206s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 2 | frame= 18 | time=3.417s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 2 | frame= 19 | time=3.621s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 2 | frame= 20 | time=3.806s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 2 | frame= 21 | time=4.008s | used_cache=True | reason=cache | sam_diff=0.067446 | depth_diff=0.033886 | metric_depth_mae=0.073703m | metric_depth_relative=0.025857 | labels=person
+interval= 2 | frame= 22 | time=4.213s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 2 | frame= 23 | time=4.403s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle|bottle
+interval= 2 | frame= 24 | time=4.601s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 2 | frame= 25 | time=4.807s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 2 | frame= 26 | time=5.001s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed|bottle
+interval= 2 | frame= 27 | time=5.201s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|person
+interval= 2 | frame= 28 | time=5.406s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 2 | frame= 29 | time=5.608s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=bottle|person
+interval= 2 | frame= 30 | time=5.803s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 2 | frame= 31 | time=6.029s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle
+interval= 2 | frame= 32 | time=6.202s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle|bed
+interval= 2 | frame= 33 | time=6.405s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 2 | frame= 34 | time=6.608s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed|bottle
+interval= 2 | frame= 35 | time=6.809s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 2 | frame= 36 | time=7.044s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 2 | frame= 37 | time=7.201s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 2 | frame= 38 | time=7.406s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 2 | frame= 39 | time=7.639s | used_cache=True | reason=cache | sam_diff=0.046228 | depth_diff=0.037145 | metric_depth_mae=0.051803m | metric_depth_relative=0.017936 | labels=person|bed
+interval= 2 | frame= 40 | time=7.807s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 2 | frame= 41 | time=8.020s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 2 | frame= 42 | time=8.225s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|cell phone
+interval= 2 | frame= 43 | time=8.427s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 2 | frame= 44 | time=8.617s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 2 | frame= 45 | time=8.833s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|cell phone
+interval= 2 | frame= 46 | time=9.045s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 2 | frame= 47 | time=9.222s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 2 | frame= 48 | time=9.427s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 2 | frame= 49 | time=9.629s | used_cache=True | reason=cache | sam_diff=0.027288 | depth_diff=0.051193 | metric_depth_mae=0.036999m | metric_depth_relative=0.013139 | labels=person|bottle
+interval= 2 | frame= 50 | time=9.815s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 3 | frame=  1 | time=0.423s | used_cache=False | reason=initial | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 3 | frame=  2 | time=0.498s | used_cache=True | reason=cache | sam_diff=0.014357 | depth_diff=0.011930 | metric_depth_mae=0.039534m | metric_depth_relative=0.014484 | labels=person
+interval= 3 | frame=  3 | time=0.516s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 3 | frame=  4 | time=0.624s | used_cache=True | reason=cache | sam_diff=0.087854 | depth_diff=0.054977 | metric_depth_mae=0.127819m | metric_depth_relative=0.045211 | labels=person
+interval= 3 | frame=  5 | time=0.825s | used_cache=True | reason=cache | sam_diff=0.180102 | depth_diff=0.056510 | metric_depth_mae=0.396000m | metric_depth_relative=0.130197 | labels=person
+interval= 3 | frame=  6 | time=1.001s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 3 | frame=  7 | time=1.231s | used_cache=True | reason=cache | sam_diff=0.039289 | depth_diff=0.039288 | metric_depth_mae=0.104416m | metric_depth_relative=0.035785 | labels=person
+interval= 3 | frame=  8 | time=1.413s | used_cache=True | reason=cache | sam_diff=0.042350 | depth_diff=0.020031 | metric_depth_mae=0.199492m | metric_depth_relative=0.070444 | labels=person
+interval= 3 | frame=  9 | time=1.611s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 3 | frame= 10 | time=1.810s | used_cache=True | reason=cache | sam_diff=0.003586 | depth_diff=0.067803 | metric_depth_mae=0.029045m | metric_depth_relative=0.010238 | labels=person
+interval= 3 | frame= 11 | time=2.011s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 3 | frame= 12 | time=2.203s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 3 | frame= 13 | time=2.410s | used_cache=True | reason=cache | sam_diff=0.028977 | depth_diff=0.020365 | metric_depth_mae=0.038136m | metric_depth_relative=0.013483 | labels=person|bottle
+interval= 3 | frame= 14 | time=2.618s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 3 | frame= 15 | time=2.815s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 3 | frame= 16 | time=3.019s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 3 | frame= 17 | time=3.206s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 3 | frame= 18 | time=3.417s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 3 | frame= 19 | time=3.621s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 3 | frame= 20 | time=3.806s | used_cache=True | reason=cache | sam_diff=0.077304 | depth_diff=0.020548 | metric_depth_mae=0.076682m | metric_depth_relative=0.026986 | labels=person
+interval= 3 | frame= 21 | time=4.008s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 3 | frame= 22 | time=4.213s | used_cache=True | reason=cache | sam_diff=0.104495 | depth_diff=0.148454 | metric_depth_mae=0.339222m | metric_depth_relative=0.126795 | labels=person
+interval= 3 | frame= 23 | time=4.403s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle|bottle
+interval= 3 | frame= 24 | time=4.601s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 3 | frame= 25 | time=4.807s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 3 | frame= 26 | time=5.001s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed|bottle
+interval= 3 | frame= 27 | time=5.201s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|person
+interval= 3 | frame= 28 | time=5.406s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 3 | frame= 29 | time=5.608s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=bottle|person
+interval= 3 | frame= 30 | time=5.803s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 3 | frame= 31 | time=6.029s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle
+interval= 3 | frame= 32 | time=6.202s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle|bed
+interval= 3 | frame= 33 | time=6.405s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 3 | frame= 34 | time=6.608s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed|bottle
+interval= 3 | frame= 35 | time=6.809s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 3 | frame= 36 | time=7.044s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 3 | frame= 37 | time=7.201s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 3 | frame= 38 | time=7.406s | used_cache=True | reason=cache | sam_diff=0.080915 | depth_diff=0.053457 | metric_depth_mae=0.146083m | metric_depth_relative=0.050101 | labels=person|bed
+interval= 3 | frame= 39 | time=7.639s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 3 | frame= 40 | time=7.807s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 3 | frame= 41 | time=8.020s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 3 | frame= 42 | time=8.225s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|cell phone
+interval= 3 | frame= 43 | time=8.427s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 3 | frame= 44 | time=8.617s | used_cache=True | reason=cache | sam_diff=0.049718 | depth_diff=0.038333 | metric_depth_mae=0.093871m | metric_depth_relative=0.033337 | labels=person
+interval= 3 | frame= 45 | time=8.833s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|cell phone
+interval= 3 | frame= 46 | time=9.045s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 3 | frame= 47 | time=9.222s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 3 | frame= 48 | time=9.427s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 3 | frame= 49 | time=9.629s | used_cache=True | reason=cache | sam_diff=0.027288 | depth_diff=0.051193 | metric_depth_mae=0.036999m | metric_depth_relative=0.013139 | labels=person|bottle
+interval= 3 | frame= 50 | time=9.815s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 4 | frame=  1 | time=0.423s | used_cache=False | reason=initial | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 4 | frame=  2 | time=0.498s | used_cache=True | reason=cache | sam_diff=0.014357 | depth_diff=0.011930 | metric_depth_mae=0.039534m | metric_depth_relative=0.014484 | labels=person
+interval= 4 | frame=  3 | time=0.516s | used_cache=True | reason=cache | sam_diff=0.059669 | depth_diff=0.030945 | metric_depth_mae=0.086631m | metric_depth_relative=0.031693 | labels=person
+interval= 4 | frame=  4 | time=0.624s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 4 | frame=  5 | time=0.825s | used_cache=True | reason=cache | sam_diff=0.127409 | depth_diff=0.057119 | metric_depth_mae=0.285710m | metric_depth_relative=0.093936 | labels=person
+interval= 4 | frame=  6 | time=1.001s | used_cache=True | reason=cache | sam_diff=0.190689 | depth_diff=0.060715 | metric_depth_mae=0.251270m | metric_depth_relative=0.084666 | labels=person
+interval= 4 | frame=  7 | time=1.231s | used_cache=True | reason=cache | sam_diff=0.219258 | depth_diff=0.049586 | metric_depth_mae=0.214964m | metric_depth_relative=0.073673 | labels=person
+interval= 4 | frame=  8 | time=1.413s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 4 | frame=  9 | time=1.611s | used_cache=True | reason=cache | sam_diff=0.007439 | depth_diff=0.006761 | metric_depth_mae=0.037434m | metric_depth_relative=0.013096 | labels=person
+interval= 4 | frame= 10 | time=1.810s | used_cache=True | reason=cache | sam_diff=0.009404 | depth_diff=0.070757 | metric_depth_mae=0.032458m | metric_depth_relative=0.011441 | labels=person
+interval= 4 | frame= 11 | time=2.011s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 4 | frame= 12 | time=2.203s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 4 | frame= 13 | time=2.410s | used_cache=True | reason=cache | sam_diff=0.028977 | depth_diff=0.020365 | metric_depth_mae=0.038136m | metric_depth_relative=0.013483 | labels=person|bottle
+interval= 4 | frame= 14 | time=2.618s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 4 | frame= 15 | time=2.815s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 4 | frame= 16 | time=3.019s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 4 | frame= 17 | time=3.206s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 4 | frame= 18 | time=3.417s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 4 | frame= 19 | time=3.621s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 4 | frame= 20 | time=3.806s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 4 | frame= 21 | time=4.008s | used_cache=True | reason=cache | sam_diff=0.067446 | depth_diff=0.033886 | metric_depth_mae=0.073703m | metric_depth_relative=0.025857 | labels=person
+interval= 4 | frame= 22 | time=4.213s | used_cache=True | reason=cache | sam_diff=0.156218 | depth_diff=0.173380 | metric_depth_mae=0.372903m | metric_depth_relative=0.139385 | labels=person
+interval= 4 | frame= 23 | time=4.403s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle|bottle
+interval= 4 | frame= 24 | time=4.601s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 4 | frame= 25 | time=4.807s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 4 | frame= 26 | time=5.001s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed|bottle
+interval= 4 | frame= 27 | time=5.201s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|person
+interval= 4 | frame= 28 | time=5.406s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 4 | frame= 29 | time=5.608s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=bottle|person
+interval= 4 | frame= 30 | time=5.803s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 4 | frame= 31 | time=6.029s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle
+interval= 4 | frame= 32 | time=6.202s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle|bed
+interval= 4 | frame= 33 | time=6.405s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 4 | frame= 34 | time=6.608s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed|bottle
+interval= 4 | frame= 35 | time=6.809s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 4 | frame= 36 | time=7.044s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 4 | frame= 37 | time=7.201s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 4 | frame= 38 | time=7.406s | used_cache=True | reason=cache | sam_diff=0.080915 | depth_diff=0.053457 | metric_depth_mae=0.146083m | metric_depth_relative=0.050101 | labels=person|bed
+interval= 4 | frame= 39 | time=7.639s | used_cache=True | reason=cache | sam_diff=0.119788 | depth_diff=0.068306 | metric_depth_mae=0.178426m | metric_depth_relative=0.061777 | labels=person|bed
+interval= 4 | frame= 40 | time=7.807s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 4 | frame= 41 | time=8.020s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 4 | frame= 42 | time=8.225s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|cell phone
+interval= 4 | frame= 43 | time=8.427s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 4 | frame= 44 | time=8.617s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 4 | frame= 45 | time=8.833s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|cell phone
+interval= 4 | frame= 46 | time=9.045s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 4 | frame= 47 | time=9.222s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 4 | frame= 48 | time=9.427s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 4 | frame= 49 | time=9.629s | used_cache=True | reason=cache | sam_diff=0.027288 | depth_diff=0.051193 | metric_depth_mae=0.036999m | metric_depth_relative=0.013139 | labels=person|bottle
+interval= 4 | frame= 50 | time=9.815s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 5 | frame=  1 | time=0.423s | used_cache=False | reason=initial | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 5 | frame=  2 | time=0.498s | used_cache=True | reason=cache | sam_diff=0.014357 | depth_diff=0.011930 | metric_depth_mae=0.039534m | metric_depth_relative=0.014484 | labels=person
+interval= 5 | frame=  3 | time=0.516s | used_cache=True | reason=cache | sam_diff=0.059669 | depth_diff=0.030945 | metric_depth_mae=0.086631m | metric_depth_relative=0.031693 | labels=person
+interval= 5 | frame=  4 | time=0.624s | used_cache=True | reason=cache | sam_diff=0.124757 | depth_diff=0.048217 | metric_depth_mae=0.178837m | metric_depth_relative=0.063256 | labels=person
+interval= 5 | frame=  5 | time=0.825s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 5 | frame=  6 | time=1.001s | used_cache=True | reason=cache | sam_diff=0.079171 | depth_diff=0.024234 | metric_depth_mae=0.132518m | metric_depth_relative=0.044652 | labels=person
+interval= 5 | frame=  7 | time=1.231s | used_cache=True | reason=cache | sam_diff=0.110493 | depth_diff=0.061115 | metric_depth_mae=0.226470m | metric_depth_relative=0.077616 | labels=person
+interval= 5 | frame=  8 | time=1.413s | used_cache=True | reason=cache | sam_diff=0.111352 | depth_diff=0.037585 | metric_depth_mae=0.317873m | metric_depth_relative=0.112247 | labels=person
+interval= 5 | frame=  9 | time=1.611s | used_cache=True | reason=cache | sam_diff=0.108557 | depth_diff=0.037324 | metric_depth_mae=0.289968m | metric_depth_relative=0.101443 | labels=person
+interval= 5 | frame= 10 | time=1.810s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 5 | frame= 11 | time=2.011s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 5 | frame= 12 | time=2.203s | used_cache=True | reason=cache | sam_diff=0.002760 | depth_diff=0.016532 | metric_depth_mae=0.017444m | metric_depth_relative=0.006159 | labels=person|bottle
+interval= 5 | frame= 13 | time=2.410s | used_cache=True | reason=cache | sam_diff=0.030654 | depth_diff=0.034042 | metric_depth_mae=0.037302m | metric_depth_relative=0.013189 | labels=person|bottle
+interval= 5 | frame= 14 | time=2.618s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 5 | frame= 15 | time=2.815s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 5 | frame= 16 | time=3.019s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 5 | frame= 17 | time=3.206s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 5 | frame= 18 | time=3.417s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 5 | frame= 19 | time=3.621s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 5 | frame= 20 | time=3.806s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 5 | frame= 21 | time=4.008s | used_cache=True | reason=cache | sam_diff=0.067446 | depth_diff=0.033886 | metric_depth_mae=0.073703m | metric_depth_relative=0.025857 | labels=person
+interval= 5 | frame= 22 | time=4.213s | used_cache=True | reason=cache | sam_diff=0.156218 | depth_diff=0.173380 | metric_depth_mae=0.372903m | metric_depth_relative=0.139385 | labels=person
+interval= 5 | frame= 23 | time=4.403s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle|bottle
+interval= 5 | frame= 24 | time=4.601s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 5 | frame= 25 | time=4.807s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 5 | frame= 26 | time=5.001s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed|bottle
+interval= 5 | frame= 27 | time=5.201s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|person
+interval= 5 | frame= 28 | time=5.406s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 5 | frame= 29 | time=5.608s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=bottle|person
+interval= 5 | frame= 30 | time=5.803s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 5 | frame= 31 | time=6.029s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle
+interval= 5 | frame= 32 | time=6.202s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle|bed
+interval= 5 | frame= 33 | time=6.405s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 5 | frame= 34 | time=6.608s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed|bottle
+interval= 5 | frame= 35 | time=6.809s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 5 | frame= 36 | time=7.044s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 5 | frame= 37 | time=7.201s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 5 | frame= 38 | time=7.406s | used_cache=True | reason=cache | sam_diff=0.080915 | depth_diff=0.053457 | metric_depth_mae=0.146083m | metric_depth_relative=0.050101 | labels=person|bed
+interval= 5 | frame= 39 | time=7.639s | used_cache=True | reason=cache | sam_diff=0.119788 | depth_diff=0.068306 | metric_depth_mae=0.178426m | metric_depth_relative=0.061777 | labels=person|bed
+interval= 5 | frame= 40 | time=7.807s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 5 | frame= 41 | time=8.020s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 5 | frame= 42 | time=8.225s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|cell phone
+interval= 5 | frame= 43 | time=8.427s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 5 | frame= 44 | time=8.617s | used_cache=True | reason=cache | sam_diff=0.049718 | depth_diff=0.038333 | metric_depth_mae=0.093871m | metric_depth_relative=0.033337 | labels=person
+interval= 5 | frame= 45 | time=8.833s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|cell phone
+interval= 5 | frame= 46 | time=9.045s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 5 | frame= 47 | time=9.222s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 5 | frame= 48 | time=9.427s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 5 | frame= 49 | time=9.629s | used_cache=True | reason=cache | sam_diff=0.027288 | depth_diff=0.051193 | metric_depth_mae=0.036999m | metric_depth_relative=0.013139 | labels=person|bottle
+interval= 5 | frame= 50 | time=9.815s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 6 | frame=  1 | time=0.423s | used_cache=False | reason=initial | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 6 | frame=  2 | time=0.498s | used_cache=True | reason=cache | sam_diff=0.014357 | depth_diff=0.011930 | metric_depth_mae=0.039534m | metric_depth_relative=0.014484 | labels=person
+interval= 6 | frame=  3 | time=0.516s | used_cache=True | reason=cache | sam_diff=0.059669 | depth_diff=0.030945 | metric_depth_mae=0.086631m | metric_depth_relative=0.031693 | labels=person
+interval= 6 | frame=  4 | time=0.624s | used_cache=True | reason=cache | sam_diff=0.124757 | depth_diff=0.048217 | metric_depth_mae=0.178837m | metric_depth_relative=0.063256 | labels=person
+interval= 6 | frame=  5 | time=0.825s | used_cache=True | reason=cache | sam_diff=0.205180 | depth_diff=0.068973 | metric_depth_mae=0.442000m | metric_depth_relative=0.145321 | labels=person
+interval= 6 | frame=  6 | time=1.001s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 6 | frame=  7 | time=1.231s | used_cache=True | reason=cache | sam_diff=0.039289 | depth_diff=0.039288 | metric_depth_mae=0.104416m | metric_depth_relative=0.035785 | labels=person
+interval= 6 | frame=  8 | time=1.413s | used_cache=True | reason=cache | sam_diff=0.042350 | depth_diff=0.020031 | metric_depth_mae=0.199492m | metric_depth_relative=0.070444 | labels=person
+interval= 6 | frame=  9 | time=1.611s | used_cache=True | reason=cache | sam_diff=0.038855 | depth_diff=0.019183 | metric_depth_mae=0.172368m | metric_depth_relative=0.060301 | labels=person
+interval= 6 | frame= 10 | time=1.810s | used_cache=True | reason=cache | sam_diff=0.040267 | depth_diff=0.072886 | metric_depth_mae=0.189373m | metric_depth_relative=0.066754 | labels=person
+interval= 6 | frame= 11 | time=2.011s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 6 | frame= 12 | time=2.203s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 6 | frame= 13 | time=2.410s | used_cache=True | reason=cache | sam_diff=0.028977 | depth_diff=0.020365 | metric_depth_mae=0.038136m | metric_depth_relative=0.013483 | labels=person|bottle
+interval= 6 | frame= 14 | time=2.618s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 6 | frame= 15 | time=2.815s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 6 | frame= 16 | time=3.019s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 6 | frame= 17 | time=3.206s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 6 | frame= 18 | time=3.417s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 6 | frame= 19 | time=3.621s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 6 | frame= 20 | time=3.806s | used_cache=True | reason=cache | sam_diff=0.077304 | depth_diff=0.020548 | metric_depth_mae=0.076682m | metric_depth_relative=0.026986 | labels=person
+interval= 6 | frame= 21 | time=4.008s | used_cache=True | reason=cache | sam_diff=0.103537 | depth_diff=0.036409 | metric_depth_mae=0.127869m | metric_depth_relative=0.044860 | labels=person
+interval= 6 | frame= 22 | time=4.213s | used_cache=True | reason=cache | sam_diff=0.152857 | depth_diff=0.169044 | metric_depth_mae=0.398227m | metric_depth_relative=0.148850 | labels=person
+interval= 6 | frame= 23 | time=4.403s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle|bottle
+interval= 6 | frame= 24 | time=4.601s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 6 | frame= 25 | time=4.807s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 6 | frame= 26 | time=5.001s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed|bottle
+interval= 6 | frame= 27 | time=5.201s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|person
+interval= 6 | frame= 28 | time=5.406s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 6 | frame= 29 | time=5.608s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=bottle|person
+interval= 6 | frame= 30 | time=5.803s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 6 | frame= 31 | time=6.029s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle
+interval= 6 | frame= 32 | time=6.202s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle|bed
+interval= 6 | frame= 33 | time=6.405s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 6 | frame= 34 | time=6.608s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed|bottle
+interval= 6 | frame= 35 | time=6.809s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 6 | frame= 36 | time=7.044s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 6 | frame= 37 | time=7.201s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 6 | frame= 38 | time=7.406s | used_cache=True | reason=cache | sam_diff=0.080915 | depth_diff=0.053457 | metric_depth_mae=0.146083m | metric_depth_relative=0.050101 | labels=person|bed
+interval= 6 | frame= 39 | time=7.639s | used_cache=True | reason=cache | sam_diff=0.119788 | depth_diff=0.068306 | metric_depth_mae=0.178426m | metric_depth_relative=0.061777 | labels=person|bed
+interval= 6 | frame= 40 | time=7.807s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 6 | frame= 41 | time=8.020s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 6 | frame= 42 | time=8.225s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|cell phone
+interval= 6 | frame= 43 | time=8.427s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 6 | frame= 44 | time=8.617s | used_cache=True | reason=cache | sam_diff=0.049718 | depth_diff=0.038333 | metric_depth_mae=0.093871m | metric_depth_relative=0.033337 | labels=person
+interval= 6 | frame= 45 | time=8.833s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|cell phone
+interval= 6 | frame= 46 | time=9.045s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 6 | frame= 47 | time=9.222s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 6 | frame= 48 | time=9.427s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 6 | frame= 49 | time=9.629s | used_cache=True | reason=cache | sam_diff=0.027288 | depth_diff=0.051193 | metric_depth_mae=0.036999m | metric_depth_relative=0.013139 | labels=person|bottle
+interval= 6 | frame= 50 | time=9.815s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 7 | frame=  1 | time=0.423s | used_cache=False | reason=initial | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 7 | frame=  2 | time=0.498s | used_cache=True | reason=cache | sam_diff=0.014357 | depth_diff=0.011930 | metric_depth_mae=0.039534m | metric_depth_relative=0.014484 | labels=person
+interval= 7 | frame=  3 | time=0.516s | used_cache=True | reason=cache | sam_diff=0.059669 | depth_diff=0.030945 | metric_depth_mae=0.086631m | metric_depth_relative=0.031693 | labels=person
+interval= 7 | frame=  4 | time=0.624s | used_cache=True | reason=cache | sam_diff=0.124757 | depth_diff=0.048217 | metric_depth_mae=0.178837m | metric_depth_relative=0.063256 | labels=person
+interval= 7 | frame=  5 | time=0.825s | used_cache=True | reason=cache | sam_diff=0.205180 | depth_diff=0.068973 | metric_depth_mae=0.442000m | metric_depth_relative=0.145321 | labels=person
+interval= 7 | frame=  6 | time=1.001s | used_cache=True | reason=cache | sam_diff=0.246929 | depth_diff=0.071251 | metric_depth_mae=0.394056m | metric_depth_relative=0.132779 | labels=person
+interval= 7 | frame=  7 | time=1.231s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 7 | frame=  8 | time=1.413s | used_cache=True | reason=cache | sam_diff=0.010263 | depth_diff=0.035299 | metric_depth_mae=0.104255m | metric_depth_relative=0.036815 | labels=person
+interval= 7 | frame=  9 | time=1.611s | used_cache=True | reason=cache | sam_diff=0.014928 | depth_diff=0.033816 | metric_depth_mae=0.086827m | metric_depth_relative=0.030376 | labels=person
+interval= 7 | frame= 10 | time=1.810s | used_cache=True | reason=cache | sam_diff=0.016651 | depth_diff=0.040254 | metric_depth_mae=0.105915m | metric_depth_relative=0.037335 | labels=person
+interval= 7 | frame= 11 | time=2.011s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 7 | frame= 12 | time=2.203s | used_cache=True | reason=cache | sam_diff=0.002760 | depth_diff=0.016532 | metric_depth_mae=0.017444m | metric_depth_relative=0.006159 | labels=person|bottle
+interval= 7 | frame= 13 | time=2.410s | used_cache=True | reason=cache | sam_diff=0.030654 | depth_diff=0.034042 | metric_depth_mae=0.037302m | metric_depth_relative=0.013189 | labels=person|bottle
+interval= 7 | frame= 14 | time=2.618s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 7 | frame= 15 | time=2.815s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 7 | frame= 16 | time=3.019s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 7 | frame= 17 | time=3.206s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 7 | frame= 18 | time=3.417s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 7 | frame= 19 | time=3.621s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 7 | frame= 20 | time=3.806s | used_cache=True | reason=cache | sam_diff=0.077304 | depth_diff=0.020548 | metric_depth_mae=0.076682m | metric_depth_relative=0.026986 | labels=person
+interval= 7 | frame= 21 | time=4.008s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 7 | frame= 22 | time=4.213s | used_cache=True | reason=cache | sam_diff=0.104495 | depth_diff=0.148454 | metric_depth_mae=0.339222m | metric_depth_relative=0.126795 | labels=person
+interval= 7 | frame= 23 | time=4.403s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle|bottle
+interval= 7 | frame= 24 | time=4.601s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 7 | frame= 25 | time=4.807s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 7 | frame= 26 | time=5.001s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed|bottle
+interval= 7 | frame= 27 | time=5.201s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|person
+interval= 7 | frame= 28 | time=5.406s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 7 | frame= 29 | time=5.608s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=bottle|person
+interval= 7 | frame= 30 | time=5.803s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 7 | frame= 31 | time=6.029s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle
+interval= 7 | frame= 32 | time=6.202s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle|bed
+interval= 7 | frame= 33 | time=6.405s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 7 | frame= 34 | time=6.608s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed|bottle
+interval= 7 | frame= 35 | time=6.809s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 7 | frame= 36 | time=7.044s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 7 | frame= 37 | time=7.201s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 7 | frame= 38 | time=7.406s | used_cache=True | reason=cache | sam_diff=0.080915 | depth_diff=0.053457 | metric_depth_mae=0.146083m | metric_depth_relative=0.050101 | labels=person|bed
+interval= 7 | frame= 39 | time=7.639s | used_cache=True | reason=cache | sam_diff=0.119788 | depth_diff=0.068306 | metric_depth_mae=0.178426m | metric_depth_relative=0.061777 | labels=person|bed
+interval= 7 | frame= 40 | time=7.807s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 7 | frame= 41 | time=8.020s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 7 | frame= 42 | time=8.225s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|cell phone
+interval= 7 | frame= 43 | time=8.427s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 7 | frame= 44 | time=8.617s | used_cache=True | reason=cache | sam_diff=0.049718 | depth_diff=0.038333 | metric_depth_mae=0.093871m | metric_depth_relative=0.033337 | labels=person
+interval= 7 | frame= 45 | time=8.833s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|cell phone
+interval= 7 | frame= 46 | time=9.045s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 7 | frame= 47 | time=9.222s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 7 | frame= 48 | time=9.427s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 7 | frame= 49 | time=9.629s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 7 | frame= 50 | time=9.815s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 8 | frame=  1 | time=0.423s | used_cache=False | reason=initial | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 8 | frame=  2 | time=0.498s | used_cache=True | reason=cache | sam_diff=0.014357 | depth_diff=0.011930 | metric_depth_mae=0.039534m | metric_depth_relative=0.014484 | labels=person
+interval= 8 | frame=  3 | time=0.516s | used_cache=True | reason=cache | sam_diff=0.059669 | depth_diff=0.030945 | metric_depth_mae=0.086631m | metric_depth_relative=0.031693 | labels=person
+interval= 8 | frame=  4 | time=0.624s | used_cache=True | reason=cache | sam_diff=0.124757 | depth_diff=0.048217 | metric_depth_mae=0.178837m | metric_depth_relative=0.063256 | labels=person
+interval= 8 | frame=  5 | time=0.825s | used_cache=True | reason=cache | sam_diff=0.205180 | depth_diff=0.068973 | metric_depth_mae=0.442000m | metric_depth_relative=0.145321 | labels=person
+interval= 8 | frame=  6 | time=1.001s | used_cache=True | reason=cache | sam_diff=0.246929 | depth_diff=0.071251 | metric_depth_mae=0.394056m | metric_depth_relative=0.132779 | labels=person
+interval= 8 | frame=  7 | time=1.231s | used_cache=True | reason=cache | sam_diff=0.270748 | depth_diff=0.081885 | metric_depth_mae=0.356591m | metric_depth_relative=0.122211 | labels=person
+interval= 8 | frame=  8 | time=1.413s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 8 | frame=  9 | time=1.611s | used_cache=True | reason=cache | sam_diff=0.007439 | depth_diff=0.006761 | metric_depth_mae=0.037434m | metric_depth_relative=0.013096 | labels=person
+interval= 8 | frame= 10 | time=1.810s | used_cache=True | reason=cache | sam_diff=0.009404 | depth_diff=0.070757 | metric_depth_mae=0.032458m | metric_depth_relative=0.011441 | labels=person
+interval= 8 | frame= 11 | time=2.011s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 8 | frame= 12 | time=2.203s | used_cache=True | reason=cache | sam_diff=0.002760 | depth_diff=0.016532 | metric_depth_mae=0.017444m | metric_depth_relative=0.006159 | labels=person|bottle
+interval= 8 | frame= 13 | time=2.410s | used_cache=True | reason=cache | sam_diff=0.030654 | depth_diff=0.034042 | metric_depth_mae=0.037302m | metric_depth_relative=0.013189 | labels=person|bottle
+interval= 8 | frame= 14 | time=2.618s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 8 | frame= 15 | time=2.815s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 8 | frame= 16 | time=3.019s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 8 | frame= 17 | time=3.206s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 8 | frame= 18 | time=3.417s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 8 | frame= 19 | time=3.621s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 8 | frame= 20 | time=3.806s | used_cache=True | reason=cache | sam_diff=0.077304 | depth_diff=0.020548 | metric_depth_mae=0.076682m | metric_depth_relative=0.026986 | labels=person
+interval= 8 | frame= 21 | time=4.008s | used_cache=True | reason=cache | sam_diff=0.103537 | depth_diff=0.036409 | metric_depth_mae=0.127869m | metric_depth_relative=0.044860 | labels=person
+interval= 8 | frame= 22 | time=4.213s | used_cache=True | reason=cache | sam_diff=0.152857 | depth_diff=0.169044 | metric_depth_mae=0.398227m | metric_depth_relative=0.148850 | labels=person
+interval= 8 | frame= 23 | time=4.403s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle|bottle
+interval= 8 | frame= 24 | time=4.601s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 8 | frame= 25 | time=4.807s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 8 | frame= 26 | time=5.001s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed|bottle
+interval= 8 | frame= 27 | time=5.201s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|person
+interval= 8 | frame= 28 | time=5.406s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 8 | frame= 29 | time=5.608s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=bottle|person
+interval= 8 | frame= 30 | time=5.803s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 8 | frame= 31 | time=6.029s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle
+interval= 8 | frame= 32 | time=6.202s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle|bed
+interval= 8 | frame= 33 | time=6.405s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 8 | frame= 34 | time=6.608s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed|bottle
+interval= 8 | frame= 35 | time=6.809s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 8 | frame= 36 | time=7.044s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 8 | frame= 37 | time=7.201s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 8 | frame= 38 | time=7.406s | used_cache=True | reason=cache | sam_diff=0.080915 | depth_diff=0.053457 | metric_depth_mae=0.146083m | metric_depth_relative=0.050101 | labels=person|bed
+interval= 8 | frame= 39 | time=7.639s | used_cache=True | reason=cache | sam_diff=0.119788 | depth_diff=0.068306 | metric_depth_mae=0.178426m | metric_depth_relative=0.061777 | labels=person|bed
+interval= 8 | frame= 40 | time=7.807s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 8 | frame= 41 | time=8.020s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 8 | frame= 42 | time=8.225s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|cell phone
+interval= 8 | frame= 43 | time=8.427s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 8 | frame= 44 | time=8.617s | used_cache=True | reason=cache | sam_diff=0.049718 | depth_diff=0.038333 | metric_depth_mae=0.093871m | metric_depth_relative=0.033337 | labels=person
+interval= 8 | frame= 45 | time=8.833s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|cell phone
+interval= 8 | frame= 46 | time=9.045s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 8 | frame= 47 | time=9.222s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 8 | frame= 48 | time=9.427s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 8 | frame= 49 | time=9.629s | used_cache=True | reason=cache | sam_diff=0.027288 | depth_diff=0.051193 | metric_depth_mae=0.036999m | metric_depth_relative=0.013139 | labels=person|bottle
+interval= 8 | frame= 50 | time=9.815s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 9 | frame=  1 | time=0.423s | used_cache=False | reason=initial | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 9 | frame=  2 | time=0.498s | used_cache=True | reason=cache | sam_diff=0.014357 | depth_diff=0.011930 | metric_depth_mae=0.039534m | metric_depth_relative=0.014484 | labels=person
+interval= 9 | frame=  3 | time=0.516s | used_cache=True | reason=cache | sam_diff=0.059669 | depth_diff=0.030945 | metric_depth_mae=0.086631m | metric_depth_relative=0.031693 | labels=person
+interval= 9 | frame=  4 | time=0.624s | used_cache=True | reason=cache | sam_diff=0.124757 | depth_diff=0.048217 | metric_depth_mae=0.178837m | metric_depth_relative=0.063256 | labels=person
+interval= 9 | frame=  5 | time=0.825s | used_cache=True | reason=cache | sam_diff=0.205180 | depth_diff=0.068973 | metric_depth_mae=0.442000m | metric_depth_relative=0.145321 | labels=person
+interval= 9 | frame=  6 | time=1.001s | used_cache=True | reason=cache | sam_diff=0.246929 | depth_diff=0.071251 | metric_depth_mae=0.394056m | metric_depth_relative=0.132779 | labels=person
+interval= 9 | frame=  7 | time=1.231s | used_cache=True | reason=cache | sam_diff=0.270748 | depth_diff=0.081885 | metric_depth_mae=0.356591m | metric_depth_relative=0.122211 | labels=person
+interval= 9 | frame=  8 | time=1.413s | used_cache=True | reason=cache | sam_diff=0.273361 | depth_diff=0.078122 | metric_depth_mae=0.289581m | metric_depth_relative=0.102257 | labels=person
+interval= 9 | frame=  9 | time=1.611s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 9 | frame= 10 | time=1.810s | used_cache=True | reason=cache | sam_diff=0.003586 | depth_diff=0.067803 | metric_depth_mae=0.029045m | metric_depth_relative=0.010238 | labels=person
+interval= 9 | frame= 11 | time=2.011s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 9 | frame= 12 | time=2.203s | used_cache=True | reason=cache | sam_diff=0.002760 | depth_diff=0.016532 | metric_depth_mae=0.017444m | metric_depth_relative=0.006159 | labels=person|bottle
+interval= 9 | frame= 13 | time=2.410s | used_cache=True | reason=cache | sam_diff=0.030654 | depth_diff=0.034042 | metric_depth_mae=0.037302m | metric_depth_relative=0.013189 | labels=person|bottle
+interval= 9 | frame= 14 | time=2.618s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 9 | frame= 15 | time=2.815s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 9 | frame= 16 | time=3.019s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 9 | frame= 17 | time=3.206s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 9 | frame= 18 | time=3.417s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 9 | frame= 19 | time=3.621s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 9 | frame= 20 | time=3.806s | used_cache=True | reason=cache | sam_diff=0.077304 | depth_diff=0.020548 | metric_depth_mae=0.076682m | metric_depth_relative=0.026986 | labels=person
+interval= 9 | frame= 21 | time=4.008s | used_cache=True | reason=cache | sam_diff=0.103537 | depth_diff=0.036409 | metric_depth_mae=0.127869m | metric_depth_relative=0.044860 | labels=person
+interval= 9 | frame= 22 | time=4.213s | used_cache=True | reason=cache | sam_diff=0.152857 | depth_diff=0.169044 | metric_depth_mae=0.398227m | metric_depth_relative=0.148850 | labels=person
+interval= 9 | frame= 23 | time=4.403s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle|bottle
+interval= 9 | frame= 24 | time=4.601s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 9 | frame= 25 | time=4.807s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 9 | frame= 26 | time=5.001s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed|bottle
+interval= 9 | frame= 27 | time=5.201s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|person
+interval= 9 | frame= 28 | time=5.406s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 9 | frame= 29 | time=5.608s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=bottle|person
+interval= 9 | frame= 30 | time=5.803s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 9 | frame= 31 | time=6.029s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle
+interval= 9 | frame= 32 | time=6.202s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle|bed
+interval= 9 | frame= 33 | time=6.405s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 9 | frame= 34 | time=6.608s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed|bottle
+interval= 9 | frame= 35 | time=6.809s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval= 9 | frame= 36 | time=7.044s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 9 | frame= 37 | time=7.201s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 9 | frame= 38 | time=7.406s | used_cache=True | reason=cache | sam_diff=0.080915 | depth_diff=0.053457 | metric_depth_mae=0.146083m | metric_depth_relative=0.050101 | labels=person|bed
+interval= 9 | frame= 39 | time=7.639s | used_cache=True | reason=cache | sam_diff=0.119788 | depth_diff=0.068306 | metric_depth_mae=0.178426m | metric_depth_relative=0.061777 | labels=person|bed
+interval= 9 | frame= 40 | time=7.807s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 9 | frame= 41 | time=8.020s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 9 | frame= 42 | time=8.225s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|cell phone
+interval= 9 | frame= 43 | time=8.427s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 9 | frame= 44 | time=8.617s | used_cache=True | reason=cache | sam_diff=0.049718 | depth_diff=0.038333 | metric_depth_mae=0.093871m | metric_depth_relative=0.033337 | labels=person
+interval= 9 | frame= 45 | time=8.833s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|cell phone
+interval= 9 | frame= 46 | time=9.045s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval= 9 | frame= 47 | time=9.222s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval= 9 | frame= 48 | time=9.427s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval= 9 | frame= 49 | time=9.629s | used_cache=True | reason=cache | sam_diff=0.027288 | depth_diff=0.051193 | metric_depth_mae=0.036999m | metric_depth_relative=0.013139 | labels=person|bottle
+interval= 9 | frame= 50 | time=9.815s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval=10 | frame=  1 | time=0.423s | used_cache=False | reason=initial | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval=10 | frame=  2 | time=0.498s | used_cache=True | reason=cache | sam_diff=0.014357 | depth_diff=0.011930 | metric_depth_mae=0.039534m | metric_depth_relative=0.014484 | labels=person
+interval=10 | frame=  3 | time=0.516s | used_cache=True | reason=cache | sam_diff=0.059669 | depth_diff=0.030945 | metric_depth_mae=0.086631m | metric_depth_relative=0.031693 | labels=person
+interval=10 | frame=  4 | time=0.624s | used_cache=True | reason=cache | sam_diff=0.124757 | depth_diff=0.048217 | metric_depth_mae=0.178837m | metric_depth_relative=0.063256 | labels=person
+interval=10 | frame=  5 | time=0.825s | used_cache=True | reason=cache | sam_diff=0.205180 | depth_diff=0.068973 | metric_depth_mae=0.442000m | metric_depth_relative=0.145321 | labels=person
+interval=10 | frame=  6 | time=1.001s | used_cache=True | reason=cache | sam_diff=0.246929 | depth_diff=0.071251 | metric_depth_mae=0.394056m | metric_depth_relative=0.132779 | labels=person
+interval=10 | frame=  7 | time=1.231s | used_cache=True | reason=cache | sam_diff=0.270748 | depth_diff=0.081885 | metric_depth_mae=0.356591m | metric_depth_relative=0.122211 | labels=person
+interval=10 | frame=  8 | time=1.413s | used_cache=True | reason=cache | sam_diff=0.273361 | depth_diff=0.078122 | metric_depth_mae=0.289581m | metric_depth_relative=0.102257 | labels=person
+interval=10 | frame=  9 | time=1.611s | used_cache=True | reason=cache | sam_diff=0.271246 | depth_diff=0.075926 | metric_depth_mae=0.299291m | metric_depth_relative=0.104704 | labels=person
+interval=10 | frame= 10 | time=1.810s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval=10 | frame= 11 | time=2.011s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval=10 | frame= 12 | time=2.203s | used_cache=True | reason=cache | sam_diff=0.002760 | depth_diff=0.016532 | metric_depth_mae=0.017444m | metric_depth_relative=0.006159 | labels=person|bottle
+interval=10 | frame= 13 | time=2.410s | used_cache=True | reason=cache | sam_diff=0.030654 | depth_diff=0.034042 | metric_depth_mae=0.037302m | metric_depth_relative=0.013189 | labels=person|bottle
+interval=10 | frame= 14 | time=2.618s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval=10 | frame= 15 | time=2.815s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval=10 | frame= 16 | time=3.019s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval=10 | frame= 17 | time=3.206s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval=10 | frame= 18 | time=3.417s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval=10 | frame= 19 | time=3.621s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval=10 | frame= 20 | time=3.806s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval=10 | frame= 21 | time=4.008s | used_cache=True | reason=cache | sam_diff=0.067446 | depth_diff=0.033886 | metric_depth_mae=0.073703m | metric_depth_relative=0.025857 | labels=person
+interval=10 | frame= 22 | time=4.213s | used_cache=True | reason=cache | sam_diff=0.156218 | depth_diff=0.173380 | metric_depth_mae=0.372903m | metric_depth_relative=0.139385 | labels=person
+interval=10 | frame= 23 | time=4.403s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle|bottle
+interval=10 | frame= 24 | time=4.601s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval=10 | frame= 25 | time=4.807s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval=10 | frame= 26 | time=5.001s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed|bottle
+interval=10 | frame= 27 | time=5.201s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|person
+interval=10 | frame= 28 | time=5.406s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval=10 | frame= 29 | time=5.608s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=bottle|person
+interval=10 | frame= 30 | time=5.803s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval=10 | frame= 31 | time=6.029s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle
+interval=10 | frame= 32 | time=6.202s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bottle|bed
+interval=10 | frame= 33 | time=6.405s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval=10 | frame= 34 | time=6.608s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed|bottle
+interval=10 | frame= 35 | time=6.809s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle|bed
+interval=10 | frame= 36 | time=7.044s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval=10 | frame= 37 | time=7.201s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval=10 | frame= 38 | time=7.406s | used_cache=True | reason=cache | sam_diff=0.080915 | depth_diff=0.053457 | metric_depth_mae=0.146083m | metric_depth_relative=0.050101 | labels=person|bed
+interval=10 | frame= 39 | time=7.639s | used_cache=True | reason=cache | sam_diff=0.119788 | depth_diff=0.068306 | metric_depth_mae=0.178426m | metric_depth_relative=0.061777 | labels=person|bed
+interval=10 | frame= 40 | time=7.807s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval=10 | frame= 41 | time=8.020s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval=10 | frame= 42 | time=8.225s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|cell phone
+interval=10 | frame= 43 | time=8.427s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval=10 | frame= 44 | time=8.617s | used_cache=True | reason=cache | sam_diff=0.049718 | depth_diff=0.038333 | metric_depth_mae=0.093871m | metric_depth_relative=0.033337 | labels=person
+interval=10 | frame= 45 | time=8.833s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|cell phone
+interval=10 | frame= 46 | time=9.045s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person
+interval=10 | frame= 47 | time=9.222s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bed
+interval=10 | frame= 48 | time=9.427s | used_cache=False | reason=cache_invalid | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person|bottle
+interval=10 | frame= 49 | time=9.629s | used_cache=True | reason=cache | sam_diff=0.027288 | depth_diff=0.051193 | metric_depth_mae=0.036999m | metric_depth_relative=0.013139 | labels=person|bottle
+interval=10 | frame= 50 | time=9.815s | used_cache=False | reason=interval | sam_diff=0.000000 | depth_diff=0.000000 | metric_depth_mae=0.000000m | metric_depth_relative=0.000000 | labels=person

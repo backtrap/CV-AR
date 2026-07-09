@@ -10,14 +10,14 @@ Semantic Interpretation Layer 단독 검증 스크립트
 
 ⚠️ 이 테스트의 성공 기준에 대한 안내
     이 단계에서 "object_identity가 smartphone/tumbler로 정확히 맞는지"를 성공 기준으로
-    삼지 않는다. 입력값(detected_class, mask_area, target_z 등)만으로는 물병/리모컨/
+    삼지 않는다. 입력값(mask_area, target_z 등)만으로는 물병/리모컨/
     스마트폰/손전등 등 여러 사물이 동일하게 설명 가능하므로, 정체성 추론이 매번 다르게
     나올 수 있다. 이는 실패가 아니라 정보 부족에 따른 정상적인 불확실성이다.
 
     이 단계에서 실제로 확인해야 할 것은 다음 3가지뿐이다:
-    1) Gemini가 JSON을 안정적으로 반환하는가 (파싱 에러 없이)
+    1) VLM이 JSON을 안정적으로 반환하는가 (파싱 에러 없이)
     2) results 배열 개수가 입력 objects 개수와 항상 일치하는가
-    3) object_state(elevated/on_floor/on_surface/unknown)가 매 호출마다 합리적으로 일관되는가
+    3) corrected_spatial_relation / semantic_state 값이 매 호출마다 합리적으로 일관되는가
 
     object_identity의 정확도 검증은 정답 데이터셋을 갖춘 다음 비교 실험(Rule-based vs
     Semantic Layer) 단계에서 별도로 다룬다.
@@ -34,10 +34,10 @@ from llm.interpreter import interpret, interpret_batch
 SAMPLE_PHONE_HAND = SemanticInterpretationInput(
     object_id=0,
     bbox_2d=[100, 100, 200, 200],
-    detected_class="bottle",
-    confidence=0.41,
     mask_area=10838,
     centroid_y=404,
+    object_x=0.0,
+    object_y=0.0,
     target_z=4.86,
     near_distance=5.95,
     floor_depth_delta=1.965,
@@ -48,10 +48,10 @@ SAMPLE_PHONE_HAND = SemanticInterpretationInput(
 SAMPLE_TUMBLER_HAND = SemanticInterpretationInput(
     object_id=1,
     bbox_2d=[300, 300, 400, 400],
-    detected_class="bottle",
-    confidence=0.57,
     mask_area=25535,
     centroid_y=161,
+    object_x=0.0,
+    object_y=0.0,
     target_z=9.49,
     near_distance=5.49,
     floor_depth_delta=-3.79,
@@ -88,19 +88,18 @@ def run_batch_call_test():
 
     for input_data, output_data in zip(batch_input.objects, batch_output.results):
         print(
-            f"\nclass={input_data.detected_class} mask_area={input_data.mask_area} "
+            f"\nobject_id={input_data.object_id} mask_area={input_data.mask_area} "
             f"target_z={input_data.target_z}"
         )
         print(
-            f"  -> identity={output_data.object_identity} "
-            f"state={output_data.object_state} "
-            f"interaction={output_data.interaction_state} (interactable={output_data.is_interactable}) "
-            f"confidence={output_data.confidence:.2f}"
+            f"  -> identity={output_data.identity.class_name} "
+            f"is_person={output_data.identity.is_person} "
+            f"spatial={output_data.corrected_spatial_relation.environment_relative} "
+            f"social={output_data.semantic_state.social_state}"
         )
-        print(f"  배경 묘사: {output_data.visual_context}")
-        print(f"  행동 추론: {output_data.affordance_reasoning}")
-        print(f"  세부 액션: {output_data.affordances}")
-        print(f"  행동 정책: {output_data.action_policy}")
+        print(f"  어포던스: {output_data.semantic_state.affordances}")
+        print(f"  행동 정책: {output_data.planner_directives.action_policy}")
+        print(f"  애니메이션 트리거: {output_data.planner_directives.animation_trigger}")
 
 
 if __name__ == "__main__":
@@ -112,4 +111,4 @@ if __name__ == "__main__":
     print("=" * 60)
     print("1) 위 출력이 에러 없이 JSON으로 파싱되었는가?")
     print("2) results 개수가 입력 objects 개수와 일치했는가?")
-    print("3) object_state 값이 합리적으로 일관되는가? (여러 번 실행해서 비교 권장)")
+    print("3) corrected_spatial_relation / semantic_state 값이 합리적으로 일관되는가? (여러 번 실행해서 비교 권장)")

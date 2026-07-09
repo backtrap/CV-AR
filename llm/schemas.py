@@ -19,20 +19,40 @@ AffordanceTag = Literal[
     "Pinch grasp to move",
     "Manipulate elongated tools",
     "To sit/to place",
+    "Bend down and pick up",
+    "Reach up and take",
+    "Observe",
+]
+
+ActionTrigger = Literal[
+    "Spherical grasp to open",
+    "Wrap grasp to open",
+    "Turn on/off switch",
+    "Press",
+    "Two hands raise and move",
+    "Cylindrical grasp to move",
+    "Pinch grasp to move",
+    "Manipulate elongated tools",
+    "To sit/to place",
+    "Bend down and pick up",
+    "Reach up and take",
     "Observe",
     "None",
 ]
+
 
 class SemanticInterpretationInput(BaseModel):
     """Geometry Layer -> Semantic Interpretation Layer 입력"""
 
     object_id: int = Field(..., description="객체 식별 ID (이미지 상의 Bounding Box 번호와 매칭됨)")
     bbox_2d: Optional[list[float]] = Field(None, description="YOLO Bounding Box [x1, y1, x2, y2]")
-    detected_class: str = Field(..., description="YOLO가 탐지한 클래스명 (오탐지 가능성 있음)")
-    confidence: float = Field(..., ge=0.0, le=1.0, description="YOLO 탐지 신뢰도")
     mask_area: int = Field(..., ge=0, description="SAM 마스크 픽셀 면적")
     centroid_y: int = Field(..., description="마스크 중심점의 y좌표 (픽셀, 화면 세로축)")
-    target_z: float = Field(..., description="카메라로부터 객체까지의 추정 거리(m), spatial_3d.z")
+    # [Task 5] 최소 요건: 3D 좌표 (X, Y, Z) 전부 + 단위(미터) 명시.
+    # 좌표계 = camera_opencv_meters (원점: 카메라 광학중심, +X 우 / +Y 하 / +Z 정면)
+    object_x: float = Field(..., description="객체 3D 좌표 X (미터). spatial_3d.x. +는 카메라 오른쪽")
+    object_y: float = Field(..., description="객체 3D 좌표 Y (미터). spatial_3d.y. +는 카메라 아래쪽")
+    target_z: float = Field(..., description="객체 3D 좌표 Z (미터). spatial_3d.z. 카메라로부터의 정면 거리")
     near_distance: Optional[float] = Field(None, description="가장 가까운 인접 객체와의 거리(m)")
     floor_depth_delta: Optional[float] = Field(
         None, description="바닥 추정 깊이와 객체 깊이의 차이(m) (바닥 접촉 추론 참고용)"
@@ -70,7 +90,7 @@ class PlannerDirectives(BaseModel):
     action_policy: Literal["APPROACH_AND_INTERACT", "OBSERVE_ONLY", "IGNORE"] = Field(
         ..., description="ActionPlanner를 위한 권고 행동 정책 (권고안일 뿐 최종 명령은 아님)"
     )
-    animation_trigger: AffordanceTag = Field(
+    animation_trigger: ActionTrigger = Field(
         ...,
         description="affordances에서 하나를 선택한 단일 실행 행동. 실행하지 않을 때는 None",
     )
@@ -99,17 +119,15 @@ class SemanticInterpretationOutput(BaseModel):
     corrected_spatial_relation: SpatialContext
     semantic_state: SemanticState
     planner_directives: PlannerDirectives
-    reasoning: str = Field(..., description="상태 판단 및 정책 도출 이유 (한국어, 1문장 내외)")
 
     @model_validator(mode="after")
     def validate_action_selection(self):
         """행동 정책, affordance 목록, 단일 trigger 사이의 의미적 일관성을 강제한다."""
         policy = self.planner_directives.action_policy
         trigger = self.planner_directives.animation_trigger
-        affordances = self.semantic_state.affordances
 
-        if trigger not in affordances:
-            raise ValueError("animation_trigger는 affordances 목록에 포함되어야 합니다.")
+        if trigger != "None" and trigger not in self.semantic_state.affordances:
+            self.semantic_state.affordances.append(trigger)
         if policy == "IGNORE" and trigger != "None":
             raise ValueError("IGNORE 정책의 animation_trigger는 None이어야 합니다.")
         if policy == "OBSERVE_ONLY" and trigger != "Observe":

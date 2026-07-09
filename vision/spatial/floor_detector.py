@@ -42,24 +42,27 @@ class FloorPlaneDetector:
         }
 
     def update_scene_with_floor(self, scene_data, depth_data):
-        """
-        [최종 피드백 반영] 
-        수식은 유지하되, 물리적 의미의 혼선을 막기 위해 필드명을 floor_depth_delta로 변경합니다.
-        가까움(Nearness)과 높음(Height)의 개념적 오염을 방지하기 위해 주석을 엄밀하게 수정했습니다.
-        """
         if not scene_data:
             return scene_data
 
-        floor_info = self.detect_floor(depth_data)
+        # 기존 로직: 전체 화면 기준 글로벌 바닥 깊이 측정 (Fallback 용도 및 Scene 전역 상태 유지용)
+        global_floor_info = self.detect_floor(depth_data)
         
         if "scene" not in scene_data:
             scene_data["scene"] = {}
             
-        scene_data["scene"]["floor_detected"] = floor_info["success"]
-        scene_data["scene"]["floor_normal"] = floor_info["floor_normal"]
-        scene_data["scene"]["floor_depth"] = round(floor_info["floor_depth"], 3)
-        scene_data["scene"]["floor_method"] = floor_info["method"]
+        scene_data["scene"]["floor_detected"] = global_floor_info["success"]
+        scene_data["scene"]["floor_normal"] = global_floor_info["floor_normal"]
+        scene_data["scene"]["floor_depth"] = round(global_floor_info["floor_depth"], 3)
+        scene_data["scene"]["floor_method"] = global_floor_info["method"]
         scene_data["scene"]["camera_height"] = 0.0
+
+        # 깊이 데이터 원본 추출
+        raw_depth = depth_data.get("raw_depth")
+        if raw_depth is not None:
+            if len(raw_depth.shape) == 3:
+                raw_depth = np.squeeze(raw_depth)
+            h, w = raw_depth.shape[:2]
 
         if "objects" in scene_data and scene_data["objects"]:
             for obj in scene_data["objects"]:
@@ -67,19 +70,42 @@ class FloorPlaneDetector:
                     continue
                 
                 obj_z = obj["spatial_3d"].get("z", 0.0)
+                
+                # 1. Fallback: 기본적으로는 글로벌 바닥 깊이를 세팅
+                object_floor_depth = global_floor_info["floor_depth"]
+                bbox = obj.get("yolo", {}).get("bbox_2d")
 
-                if floor_info["success"] and obj_z > 0:
-                    # [최종 수정 완료] 
-                    # 양수(+): 객체가 바닥 후보 레이어보다 카메라에 가까움 (앞에 있음)
-                    # 음수(-): 객체가 바닥 후보 레이어보다 카메라에서 더 멀리 위치함 (뒤에 있음)
-                    # 주의: 이 값은 기하학적 '높이(Height)'가 아닌 '상대적 깊이 차이'만을 의미합니다.
-                    margin = round(float(floor_info["floor_depth"] - obj_z), 3)
+                # 2. 동적 밴드 측정: 원본 깊이맵과 bbox가 모두 존재할 때만 실행
+                if raw_depth is not None and bbox and obj_z > 0:
+                    x1, y1, x2, y2 = bbox
+                    
+                    # 객체 높이의 25%를 footing 밴드 높이로 동적 계산
+                    band_h = int((y2 - y1) * 0.25)
+                    band_h = max(band_h, 10)  # 너무 얇아지지 않도록 최소 10px 안전장치
+                    
+                    # bbox 하단 footing 밴드 (화면 밖으로 나가지 않도록 클리핑)
+                    roi_y1 = min(y2, h - 1)
+                    roi_y2 = min(y2 + band_h, h)
+                    
+                    if roi_y2 > roi_y1:
+                        # 좌우 너비도 화면 밖으로 나가지 않도록 클리핑
+                        safe_x1, safe_x2 = max(0, x1), min(w, x2)
+                        if safe_x2 > safe_x1:
+                            band_roi = raw_depth[roi_y1:roi_y2, safe_x1:safe_x2]
+                            valid_pixels = band_roi[band_roi > 0]
+                            
+                            # 3. 밴드 내에 유효 픽셀이 있다면, 그 값을 '진짜 바닥(Local Floor)'으로 덮어씀!
+                            if valid_pixels.size > 0:
+                                object_floor_depth = float(np.median(valid_pixels))
+
+                # 4. 최종 마진(Delta) 계산
+                if global_floor_info["success"] and obj_z > 0:
+                    margin = round(float(object_floor_depth - obj_z), 3)
                     obj["floor_depth_delta"] = margin
                 else:
                     obj["floor_depth_delta"] = 0.0
 
         return scene_data
-
 
 # =====================================================================
 # 🚀 7단계 FloorPlaneDetector 최종 정합성 유닛 테스트

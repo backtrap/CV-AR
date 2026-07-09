@@ -8,6 +8,7 @@ import csv
 import os
 import glob
 import re
+from vision.spatial.floor_detector import FloorPlaneDetector
 from ultralytics import YOLO, SAM
 from transformers import pipeline
 from PIL import Image
@@ -15,7 +16,7 @@ from PIL import Image
 # =====================================================================
 # 🔬 [최종 진화형] Floor 검증 하네스 - 데이터 채굴 마스터 스크립트
 # =====================================================================
-CALIBRATED_NEAR_THRESHOLD = 3.0
+CALIBRATED_NEAR_THRESHOLD = 0.6
 CURRENT_FLOOR_MODE = "Bottom_ROI"
 SAM_INTERVAL = 5
 DEPTH_INTERVAL = 10
@@ -114,7 +115,7 @@ class ResearchRelationGraph:
         objects = scene_data.get("objects", [])
         num_objs = len(objects)
         floor_depth = scene_data["scene"]["floor_depth"]
-        valid_pixels = scene_data["scene"]["floor_valid_pixels"]
+        valid_pixels = scene_data["scene"].get("floor_valid_pixels", 0)
         frame_id = scene_data["frame_metadata"]["frame_id"]
 
         person_objs = [o for o in objects if o["label"] == "person" and o.get("sam")]
@@ -221,11 +222,11 @@ def main():
     device = "mps" if torch.backends.mps.is_available() else "cpu"
     yolo_model = YOLO("yolov8n.pt")
     sam_model = SAM("sam_b.pt")
-    depth_pipe = pipeline(task="depth-estimation", model="depth-anything/Depth-Anything-V2-Base-hf", device=device)
+    depth_pipe = pipeline(task="depth-estimation", model="depth-anything/Depth-Anything-V2-Metric-Indoor-Base-hf", device=device)
 
     stream = UnifiedWebcamStream()
     geometry_engine = UnifiedGeometryEngine()
-    floor_detector = ResearchFloorDetector()
+    floor_detector = FloorPlaneDetector()
     relation_graph = ResearchRelationGraph(threshold=CALIBRATED_NEAR_THRESHOLD)
     affordance_engine = ResearchAffordanceEngine()
 
@@ -248,6 +249,10 @@ def main():
             cached_depth_map = torch.nn.functional.interpolate(
                 pred_depth.unsqueeze(0).unsqueeze(0), size=(h, w), mode="bilinear", align_corners=False
             ).squeeze().cpu().numpy()
+            
+            # [스케일 보정] 사용자 측정치 반영 깊이 보정 계수 추가 (실제 22cm / 화면 43cm = 약 0.51)
+            DEPTH_SCALE_FACTOR = 0.51
+            cached_depth_map = cached_depth_map * DEPTH_SCALE_FACTOR
 
         yolo_res = yolo_model(frame, device=device, verbose=False, conf=0.25)[0]
         scene_data = {"frame_metadata": {"frame_id": frame_count, "camera_resolution": [w, h]}, "scene": {}, "objects": []}
@@ -287,7 +292,7 @@ def main():
                     obj["depth"] = {"mean_relative_depth": round(float(np.mean(roi_pix)), 4) if roi_pix.size > 0 else 0.0}
 
         scene_3d = geometry_engine.process_scene_3d(scene_data)
-        scene_floor = floor_detector.update_scene_with_floor(scene_3d, cached_depth_map)
+        scene_floor = floor_detector.update_scene_with_floor(scene_3d, {"raw_depth": cached_depth_map})
         scene_graph = relation_graph.process_scene_relations(scene_floor)
         final_scene = affordance_engine.infer_affordances(scene_graph)
 

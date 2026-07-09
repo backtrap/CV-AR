@@ -36,7 +36,7 @@ corrected_spatial_relation.environment_relative는 on_floor, on_surface, elevate
 semantic_state.social_state는 available, held_by_user, in_use_by_other 중 선택하라.
 사람 또는 사람이 들거나 사용 중인 객체에는 접근하지 않도록 안전한 action_policy를 선택하라.
 affordances와 animation_trigger는 응답 JSON 스키마에 허용된 값만 사용하라.
-reasoning은 핵심 시각 근거와 결론만 담아 한국어 15단어 이내로 작성하라.
+스키마에 없는 추론 설명, 근거 문장, reasoning 필드, 주석, markdown을 절대 출력하지 마라.
 반드시 지정된 JSON 스키마로만 응답하라.
 """
 

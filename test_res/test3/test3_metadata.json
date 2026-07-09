@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-07-06T15:28:27+09:00",
+  "created_at": "2026-07-09T23:08:25+09:00",
   "capture_seconds": 10.0,
   "sample_fps": 5.0,
   "captured_frame_count": 50,
@@ -18,7 +18,9 @@
   "bbox_iou_threshold": 0.7,
   "sam_metric": "1 - IoU of baseline and cached union masks",
   "depth_metric": "MAE of independently min-max-normalized baseline and cached depth maps",
-  "baseline_mean_yolo_seconds": 0.0771771760005504,
-  "baseline_mean_sam_seconds": 3.8783847759943457,
-  "baseline_mean_depth_seconds": 2.6098506820062175
+  "metric_depth_mae": "MAE in meters between baseline and cached Metric Depth maps",
+  "metric_depth_relative_error": "Metric Depth MAE divided by baseline mean absolute depth",
+  "baseline_mean_yolo_seconds": 0.13375429800020355,
+  "baseline_mean_sam_seconds": 7.422860100000107,
+  "baseline_mean_depth_seconds": 5.614878323999874
 }

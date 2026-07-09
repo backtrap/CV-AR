@@ -1,0 +1,33 @@
+{
+  "files": [
+    "dist_log.csv",
+    "dist_log01.csv",
+    "dist_log02.csv",
+    "dist_log03.csv"
+  ],
+  "n_samples": 735,
+  "n_conditions": 1,
+  "scale_applied": 1.0,
+  "label_filter": "cell phone",
+  "regression": {
+    "n": 735,
+    "mae": 2.259843265306123,
+    "rmse": 3.0973918378045036,
+    "absrel": 7.532810884353743,
+    "bias": 2.2546598639455784,
+    "delta1": 0.031292517006802724,
+    "pearson_r": NaN,
+    "pred_std": 2.1237573060052943
+  },
+  "abs_err_mae_95ci": {
+    "point": 2.259843265306123,
+    "lo": 2.1038058877551022,
+    "hi": 2.412974901360544
+  },
+  "bland_altman": {
+    "mean_diff": 2.2546598639455784,
+    "sd_diff": 2.125203514757168,
+    "loa_lower": -1.9107390249784704,
+    "loa_upper": 6.420058752869627
+  }
+}

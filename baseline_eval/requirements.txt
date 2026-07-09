@@ -1,0 +1,9 @@
+# baseline_eval 전용 의존성 (프로젝트 .venv에 이미 대부분 설치돼 있음)
+numpy
+openai
+python-dotenv
+pillow
+matplotlib          # 그림(Bland-Altman 등) 생성용, 없으면 표만 산출
+opencv-python       # collect_frames.py (웹캠 수집)용
+ultralytics         # collect_frames.py (YOLO 박스)용
+# scipy / pandas 는 사용하지 않음 (metrics.py가 numpy로 통계 검정 직접 구현)

@@ -8,7 +8,7 @@ scene_data 구조 (기존 vision 파이프라인 출력 기준):
     "objects": [
         {
             "label": "bottle",
-            "yolo": {"confidence": 0.41, "bbox_2d": [...]},
+            "yolo": {"bbox_2d": [...]},
             "sam": {"mask_area": 10838, "centroid_2d": [612, 404]},
             "depth": {"mean_relative_depth": ...},
             "spatial_3d": {"x": ..., "y": ..., "z": 4.86},
@@ -39,10 +39,10 @@ def build_input_from_object(
     return SemanticInterpretationInput(
         object_id=object_id,
         bbox_2d=obj.get("yolo", {}).get("bbox_2d"),
-        detected_class=obj["label"],
-        confidence=obj["yolo"]["confidence"],
         mask_area=obj["sam"]["mask_area"],
         centroid_y=obj["sam"]["centroid_2d"][1],
+        object_x=obj["spatial_3d"]["x"],
+        object_y=obj["spatial_3d"]["y"],
         target_z=obj["spatial_3d"]["z"],
         near_distance=obj.get("near_distance"),
         floor_depth_delta=obj.get("floor_depth_delta"),
@@ -57,7 +57,5 @@ def build_inputs_from_scene(
     """scene_data 한 프레임 전체에서 객체별 입력 리스트를 추출한다."""
     inputs = []
     for idx, obj in enumerate(scene_data.get("objects", [])):
-        if obj["label"] == "person" and obj["yolo"]["confidence"] < 0.5:
-            continue
         inputs.append(build_input_from_object(obj, idx, context=context))
     return inputs
